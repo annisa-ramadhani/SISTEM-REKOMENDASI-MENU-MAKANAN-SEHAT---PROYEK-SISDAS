@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Healthy Food Recommendation</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="bg"></div>
+
+    <div class="container">
+
+        <!-- HERO -->
+        <div class="hero">
+
+            <div class="hero-left">
+
+                <span class="tag">
+                    AI Healthy Recommendation
+                </span>
+
+                <h1>
+                    Sistem Rekomendasi
+                    <span>Menu Makanan Sehat</span>
+                </h1>
+
+                <p>
+                    Sistem cerdas untuk memberikan rekomendasi menu makanan
+                    sehat berdasarkan BMI, kebutuhan kalori, aktivitas,
+                    dan tujuan pengguna.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+        <div class="form-card">
+
+            <form method="POST">
+
+                <div class="grid">
+                    <div class="input-group">
+    <label>Nama Pengguna</label>
+
+    <input
+        type="text"
+        name="nama"
+        placeholder="Masukkan nama"
+        required
+    >
+</div>
+
+                    <div class="input-group">
+
+                        <label>Jenis Kelamin</label>
+
+                        <select name="gender" required>
+
+                            <option>
+                                Laki-laki
+                            </option>
+
+                            <option>
+                                Perempuan
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Usia</label>
+
+                        <input
+                            type="number"
+                            name="usia"
+                            placeholder="Masukkan usia"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Berat Badan (kg)</label>
+
+                        <input
+                            type="number"
+                            name="berat"
+                            placeholder="Masukkan berat badan"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Tinggi Badan (cm)</label>
+
+                        <input
+                            type="number"
+                            name="tinggi"
+                            placeholder="Masukkan tinggi badan"
+                            required>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Tingkat Aktivitas</label>
+
+                        <select name="aktivitas" required>
+
+                            <option>
+                                Ringan
+                            </option>
+
+                            <option>
+                                Sedang
+                            </option>
+
+                            <option>
+                                Berat
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Tujuan Program</label>
+
+                        <select name="tujuan" required>
+
+                            <option value="Menurunkan Berat Badan">
+                                Menurunkan Berat Badan
+                            </option>
+
+                            <option value="Menjaga Berat Badan">
+                                Menjaga Berat Badan
+                            </option>
+
+                            <option value="Menambah Massa Otot">
+                                Menambah Massa Otot
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <button type="submit">
+                    Generate Healthy Meal Plan
+                </button>
+
+            </form>
+
+        </div>
+
+        {% if rekomendasi %}
+
+        <!-- RESULT -->
+        <div class="result-section">
+
+            <!-- TOP INFO -->
+            <div class="top-info">
+
+                <div class="info-card">
+
+                    <h4>BMI</h4>
+
+                    <h2>
+                        {{ bmi }}
+                    </h2>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h4>Kategori</h4>
+
+                    <h2>
+                        {{ kategori }}
+                    </h2>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h4>Kalori Harian</h4>
+
+                    <h2>
+                        {{ total_kalori }} kcal
+                    </h2>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h4>Tujuan</h4>
+
+                    <h2>
+                        {{ tujuan }}
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <!-- BMI VISUAL -->
+            <div class="bmi-visual">
+
+                <h2>
+                    Rentang BMI
+                </h2>
+
+                <div class="bmi-arrow-wrapper">
+
+                    {% if bmi < 18.5 %}
+
+                    <div class="bmi-arrow" style="left:12%;">
+                        ▼
+                    </div>
+
+                    {% elif bmi < 25 %}
+
+                    <div class="bmi-arrow" style="left:38%;">
+                        ▼
+                    </div>
+
+                    {% elif bmi < 30 %}
+
+                    <div class="bmi-arrow" style="left:63%;">
+                        ▼
+                    </div>
+
+                    {% else %}
+
+                    <div class="bmi-arrow" style="left:88%;">
+                        ▼
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+                <div class="bmi-bar">
+
+                    <div class="bmi-segment kurus">
+
+                        Kurus
+
+                        <small>
+                            < 18.5
+                        </small>
+
+                    </div>
+
+                    <div class="bmi-segment normal">
+
+                        Normal
+
+                        <small>
+                            18.5 - 24.9
+                        </small>
+
+                    </div>
+
+                    <div class="bmi-segment overweight">
+
+                        Overweight
+
+                        <small>
+                            25 - 29.9
+                        </small>
+
+                    </div>
+
+                    <div class="bmi-segment obesitas">
+
+                        Obesitas
+
+                        <small>
+                            30+
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="bmi-result">
+
+                    BMI Kamu :
+                    <strong>{{ bmi }}</strong>
+
+                    ({{ kategori }})
+
+                </div>
+
+            </div>
+
+            <!-- ANALISIS -->
+            <div class="analysis-box">
+
+                <h2>
+                    📊 Analisis Sistem
+                </h2>
+
+                <p>
+                    Berdasarkan data pengguna,
+                    sistem merekomendasikan program
+                    <strong>{{ tujuan }}</strong>
+                    dengan kebutuhan energi harian sekitar
+                    <strong>{{ total_kalori }} kalori</strong>.
+                    Status BMI pengguna berada pada kategori
+                    <strong>{{ kategori }}</strong>.
+                </p>
+
+            </div>
+
+            <!-- TITLE -->
+            <div class="section-title">
+
+                <h2>
+                    🍽️ Weekly Healthy Meal Plan
+                </h2>
+
+                <p>
+                    Rekomendasi menu sehat selama 7 hari
+                </p>
+
+            </div>
+
+            <!-- CARD -->
+            <div class="meal-container">
+
+                {% for item in rekomendasi %}
+
+                <div class="meal-card">
+
+                    <!-- HEADER -->
+                    <div class="card-header">
+
+                        <h2>
+                            {{ item.hari }}
+                        </h2>
+
+                        <span>
+                            {{ item.total }} kcal
+                        </span>
+
+                    </div>
+
+                    <!-- SARAPAN -->
+                    <div class="meal-box">
+
+                        <h3>
+                            🌅 Sarapan
+                        </h3>
+
+                        <p>
+                            {{ item.sarapan.nama }}
+                        </p>
+
+                        <small>
+                            {{ item.sarapan.kalori }} kcal
+                        </small>
+
+                        <div class="food-detail">
+
+                            <div class="nutri">
+                                💪 Protein :
+                                {{ item.sarapan.protein }} g
+                            </div>
+
+                            <div class="nutri">
+                                🍚 Karbohidrat :
+                                {{ item.sarapan.karbohidrat }} g
+                            </div>
+
+                            <div class="nutri">
+                                🥑 Lemak :
+                                {{ item.sarapan.lemak }} g
+                            </div>
+
+                        </div>
+
+                        <div class="desc-box">
+
+                            <p>
+                                {{ item.sarapan.deskripsi }}
+                            </p>
+
+                            <p>
+                                <strong>
+                                    Sumber Protein:
+                                </strong>
+
+                                {{ item.sarapan.sumber_protein }}
+                            </p>
+
+                            <p>
+                                <strong>
+                                    Sumber Karbohidrat:
+                                </strong>
+
+                                {{ item.sarapan.sumber_karbo }}
+                            </p>
+
+                            <p>
+                                <strong>
+                                    Sumber Serat:
+                                </strong>
+
+                                {{ item.sarapan.sumber_serat }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- MAKAN SIANG -->
+                    <div class="meal-box">
+
+                        <h3>
+                            ☀️ Makan Siang
+                        </h3>
+
+                        <p>
+                            {{ item.siang.nama }}
+                        </p>
+
+                        <small>
+                            {{ item.siang.kalori }} kcal
+                        </small>
+
+                        <div class="food-detail">
+
+                            <div class="nutri">
+                                💪 Protein :
+                                {{ item.siang.protein }} g
+                            </div>
+
+                            <div class="nutri">
+                                🍚 Karbohidrat :
+                                {{ item.siang.karbohidrat }} g
+                            </div>
+
+                            <div class="nutri">
+                                🥑 Lemak :
+                                {{ item.siang.lemak }} g
+                            </div>
+
+                        </div>
+
+                        <div class="desc-box">
+
+                            <p>
+                                {{ item.siang.deskripsi }}
+                            </p>
+
+                            <p>
+                                <strong>Sumber Protein:</strong>
+                                {{ item.siang.sumber_protein }}
+                            </p>
+
+                            <p>
+                                <strong>Sumber Karbohidrat:</strong>
+                                {{ item.siang.sumber_karbo }}
+                            </p>
+
+                            <p>
+                                <strong>Sumber Serat:</strong>
+                                {{ item.siang.sumber_serat }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- MAKAN MALAM -->
+                    <div class="meal-box">
+
+                        <h3>
+                            🌙 Makan Malam
+                        </h3>
+
+                        <p>
+                            {{ item.malam.nama }}
+                        </p>
+
+                        <small>
+                            {{ item.malam.kalori }} kcal
+                        </small>
+
+                        <div class="food-detail">
+
+                            <div class="nutri">
+                                💪 Protein :
+                                {{ item.malam.protein }} g
+                            </div>
+
+                            <div class="nutri">
+                                🍚 Karbohidrat :
+                                {{ item.malam.karbohidrat }} g
+                            </div>
+
+                            <div class="nutri">
+                                🥑 Lemak :
+                                {{ item.malam.lemak }} g
+                            </div>
+
+                        </div>
+
+                        <div class="desc-box">
+
+                            <p>
+                                {{ item.malam.deskripsi }}
+                            </p>
+
+                            <p>
+                                <strong>Sumber Protein:</strong>
+                                {{ item.malam.sumber_protein }}
+                            </p>
+
+                            <p>
+                                <strong>Sumber Karbohidrat:</strong>
+                                {{ item.malam.sumber_karbo }}
+                            </p>
+
+                            <p>
+                                <strong>Sumber Serat:</strong>
+                                {{ item.malam.sumber_serat }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BUAH -->
+                    <div class="meal-box">
+
+                        <h3>
+                            🍎 Buah
+                        </h3>
+
+                        <p>
+                            {{ item.buah.nama }}
+                        </p>
+
+                    </div>
+
+                    <!-- MINUMAN -->
+                    <div class="meal-box">
+
+                        <h3>
+                            🥤 Minuman
+                        </h3>
+
+                        <p>
+                            {{ item.minuman.nama }}
+                        </p>
+
+                    </div>
+
+                    <!-- CEMILAN -->
+                    <div class="meal-box">
+
+                        <h3>
+                            🍪 Cemilan
+                        </h3>
+
+                        <p>
+                            {{ item.cemilan.nama }}
+                        </p>
+
+                    </div>
+
+                    <!-- PROGRESS -->
+                    <div class="progress-section">
+
+                        {% set persen = (item.total / total_kalori * 100) | round %}
+
+                        <div class="progress-top">
+
+                            <span>
+                                Kecocokan Kalori
+                            </span>
+
+                            <span>
+                                {{ persen }}%
+                            </span>
+
+                        </div>
+
+                        <div class="progress-bar">
+
+                            <div class="progress"
+                                style="width: {{ persen if persen <= 100 else 100 }}%;">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+        <!-- DOWNLOAD HASIL -->
+<div class="download-section">
+
+    <a href="/download_hasil">
+
+        <button class="download-btn">
+
+            📥 Download Hasil Rekomendasi Anda
+
+        </button>
+
+    </a>
+
+</div>
+
+        {% endif %}
+
+        <!-- FEEDBACK -->
+<div class="feedback-section">
+
+    <h2>⭐ Feedback Pengguna</h2>
+
+    <p>
+        Berikan penilaian terhadap sistem rekomendasi makanan sehat ini
+    </p>
+
+    <form action="/feedback" method="POST">
+
+        <!-- hidden data -->
+        <input type="hidden" name="nama" value="{{ nama }}">
+        <input type="hidden" name="gender" value="{{ gender }}">
+        <input type="hidden" name="usia" value="{{ usia }}">
+        <input type="hidden" name="berat" value="{{ berat }}">
+        <input type="hidden" name="tinggi" value="{{ tinggi }}">
+        <input type="hidden" name="aktivitas" value="{{ aktivitas }}">
+        <input type="hidden" name="tujuan" value="{{ tujuan }}">
+        <input type="hidden" name="bmi" value="{{ bmi }}">
+        <input type="hidden" name="kategori" value="{{ kategori }}">
+        <input type="hidden" name="kalori" value="{{ total_kalori }}">
+        <input type="hidden" name="program" value="{{ program }}">
+
+        <div class="input-group">
+
+            <label>Nama Pengguna</label>
+
+            <input
+                type="text"
+                name="nama_pengguna"
+                placeholder="Masukkan nama"
+                required>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Rating Sistem</label>
+
+            <select name="rating" required>
+
+                <option value="5">
+                    ⭐⭐⭐⭐⭐ (5)
+                </option>
+
+                <option value="4">
+                    ⭐⭐⭐⭐ (4)
+                </option>
+
+                <option value="3">
+                    ⭐⭐⭐ (3)
+                </option>
+
+                <option value="2">
+                    ⭐⭐ (2)
+                </option>
+
+                <option value="1">
+                    ⭐ (1)
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="input-group">
+
+            <label>Komentar</label>
+
+            <textarea
+                name="feedback"
+                rows="5"
+                placeholder="Berikan komentar terhadap sistem..."
+                required></textarea>
+
+        </div>
+
+        <button type="submit">
+            Kirim Feedback
+        </button>
+
+    </form>
+
+</div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+
+</html>
