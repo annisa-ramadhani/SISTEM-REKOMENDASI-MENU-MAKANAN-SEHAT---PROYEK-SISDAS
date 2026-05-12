@@ -743,15 +743,16 @@ def download_hasil():
 
     # =====================================================
     # SAVE
-    # =====================================================
-    file_path = 'hasil_rekomendasi.png'
-
-    img.save(file_path)
-
-    return send_file(
-        file_path,
-        as_attachment=True
-    )
+    # =====================================================import io
+img_io = io.BytesIO()
+img.save(img_io, 'PNG')
+img_io.seek(0)
+return send_file(
+    img_io,
+    mimetype='image/png',
+    as_attachment=True,
+    download_name='hasil_rekomendasi.png'
+)
 
 # =========================================================
 # FEEDBACK
