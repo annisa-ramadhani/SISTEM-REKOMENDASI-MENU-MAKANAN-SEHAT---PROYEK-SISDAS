@@ -744,15 +744,15 @@ def download_hasil():
     # =====================================================
     # SAVE
     # =====================================================imimport io
-img_io = io.BytesIO()
-img.save(img_io, 'PNG')
-img_io.seek(0)
-return send_file(
-    img_io,
-    mimetype='image/png',
-    as_attachment=True,
-    download_name='hasil_rekomendasi.png'
-)
+    img_io = io.BytesIO()
+    img.save(img_io, 'PNG')
+    img_io.seek(0)
+    return send_file(
+        img_io,
+        mimetype='image/png',
+        as_attachment=True,
+        download_name='hasil_rekomendasi.png'
+    )
 
 # =========================================================
 # FEEDBACK
