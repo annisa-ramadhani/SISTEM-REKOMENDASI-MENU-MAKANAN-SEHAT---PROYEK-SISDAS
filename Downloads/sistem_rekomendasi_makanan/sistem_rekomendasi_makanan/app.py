@@ -6,8 +6,11 @@
 
 import random
 import io
+import gspread
 import csv
 import os
+
+from google.oauth2.service_account import Credentials
 
 from flask import (
     Flask,
@@ -132,11 +135,11 @@ def ambil_data():
 
                 "kalori": int(row["kalori"]),
 
-                "protein": int(row["protein"]),
+                "protein": float(row["protein"]),
 
-                "lemak": int(row["lemak"]),
+                "lemak": float(row["lemak"]),
 
-                "karbohidrat": int(row["karbohidrat"]),
+                "karbohidrat": float(row["karbohidrat"]),
 
                 "kategori": row["kategori"],
 
@@ -290,46 +293,34 @@ def buat_meal_plan(kebutuhan_kalori):
 # =========================================================
 # SIMPAN CSV
 # =========================================================
-def simpan_hasil_pengguna(data):
+def connect_sheet():
+    scope = [
+        "https://spreadsheets.google.com/feeds",
+        "https://www.googleapis.com/auth/drive"
+    ]
+    creds = Credentials.from_service_account_file(
+        'credentials.json', scopes=scope
+    )
+    client = gspread.authorize(creds)
+    return client.open_by_key('1EobTwQTF4eyx9caOHFwkWrSdORWpM5LEkbQcA1V6XH4')
 
-    file_csv = "hasil_pengguna_sistem.csv"
+def simpan_data_pengguna(data):
+    try:
+        sheet = connect_sheet()
+        ws = sheet.worksheet('Data Pengguna')
+        ws.append_row(data)
+        print("Data pengguna berhasil masuk!")
+    except Exception as e:
+        print(f"ERROR: {e}")
 
-    file_exists = os.path.isfile(file_csv)
-
-    with open(
-
-        file_csv,
-
-        mode='a',
-
-        newline='',
-
-        encoding='utf-8'
-
-    ) as file:
-
-        writer = csv.writer(file)
-
-        if not file_exists:
-
-            writer.writerow([
-
-                "Nama",
-                "Gender",
-                "Usia",
-                "Berat",
-                "Tinggi",
-                "Aktivitas",
-                "Tujuan",
-                "BMI",
-                "Kategori BMI",
-                "Kalori Harian",
-                "Rating",
-                "Feedback"
-
-            ])
-
-        writer.writerow(data)
+def simpan_feedback(data):
+    try:
+        sheet = connect_sheet()
+        ws = sheet.worksheet('Data Feedback')
+        ws.append_row(data)
+        print("Feedback berhasil masuk!")
+    except Exception as e:
+        print(f"ERROR: {e}")
 
 # =========================================================
 # ROUTE UTAMA
@@ -407,6 +398,11 @@ def index():
             total_kalori
         )
 
+        simpan_data_pengguna([
+            nama, gender, usia, berat, tinggi,
+            aktivitas, tujuan, bmi, kategori, total_kalori
+        ])
+    
         last_result = {
 
             "nama": nama,
@@ -778,7 +774,11 @@ def feedback():
 
     ]
 
-    simpan_hasil_pengguna(data)
+    simpan_feedback([
+        request.form.get('nama'),
+        request.form.get('rating'),
+        request.form.get('feedback')
+    ])
 
     return redirect(url_for('index'))
 
@@ -788,3 +788,5 @@ def feedback():
 if __name__ == '__main__':
     
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+
+
