@@ -159,18 +159,21 @@ def ambil_data():
 # PILIH MENU BERDASARKAN SCORING
 # =========================================================
 def pilih_menu(data_list, target):
+    kandidat = [x for x in data_list if abs(x["kalori"] - target) <= target * 0.15]
+    if not kandidat:
+        kandidat = sorted(data_list, key=lambda x: abs(x["kalori"] - target))[:3]
+    return min(kandidat, key=lambda x: abs(x["kalori"] - target))
 
-    kandidat = sorted(
-
-        data_list,
-
-        key=lambda x: abs(
-            x["kalori"] - target
-        )
-    )
-
-    return random.choice(kandidat[:5])
-
+def pilih_menu_unik(data_list, target, used_set):
+    for toleransi in [0.15, 0.25, 0.40, 1.0]:
+        kandidat = [x for x in data_list
+                    if x["nama"] not in used_set
+                    and abs(x["kalori"] - target) <= target * toleransi]
+        if kandidat:
+            break
+    if not kandidat:
+        kandidat = data_list
+    return min(kandidat, key=lambda x: abs(x["kalori"] - target))
 # =========================================================
 # BUAT MEAL PLAN
 # =========================================================
@@ -191,6 +194,9 @@ def buat_meal_plan(kebutuhan_kalori):
 
     meal_plan = []
 
+    used = {"sarapan": set(), "siang": set(), "malam": set(),
+            "buah": set(), "minuman": set(), "cemilan": set()}
+    
     sarapan_list = [
         x for x in data
         if x["kategori"] == "Sarapan"
@@ -223,35 +229,19 @@ def buat_meal_plan(kebutuhan_kalori):
 
     for hari in hari_list:
 
-        sarapan = pilih_menu(
-            sarapan_list,
-            kebutuhan_kalori * 0.25
-        )
+        sarapan = pilih_menu_unik(sarapan_list, kebutuhan_kalori * 0.25, used["sarapan"])
+        siang   = pilih_menu_unik(siang_list,   kebutuhan_kalori * 0.35, used["siang"])
+        malam   = pilih_menu_unik(malam_list,   kebutuhan_kalori * 0.25, used["malam"])
+        buah    = pilih_menu_unik(buah_list,    kebutuhan_kalori * 0.05, used["buah"])
+        minuman = pilih_menu_unik(minuman_list, kebutuhan_kalori * 0.03, used["minuman"])
+        cemilan = pilih_menu_unik(cemilan_list, kebutuhan_kalori * 0.07, used["cemilan"])
 
-        siang = pilih_menu(
-            siang_list,
-            kebutuhan_kalori * 0.35
-        )
-
-        malam = pilih_menu(
-            malam_list,
-            kebutuhan_kalori * 0.25
-        )
-
-        buah = pilih_menu(
-            buah_list,
-            kebutuhan_kalori * 0.05
-        )
-
-        minuman = pilih_menu(
-            minuman_list,
-            kebutuhan_kalori * 0.03
-        )
-
-        cemilan = pilih_menu(
-            cemilan_list,
-            kebutuhan_kalori * 0.07
-        )
+        used["sarapan"].add(sarapan["nama"])
+        used["siang"].add(siang["nama"])
+        used["malam"].add(malam["nama"])
+        used["buah"].add(buah["nama"])
+        used["minuman"].add(minuman["nama"])
+        used["cemilan"].add(cemilan["nama"])    
 
         total = (
 
@@ -456,14 +446,12 @@ def index():
 # =========================================================
 @app.route('/download_hasil')
 def download_hasil():
-
     global last_result
 
     import tempfile, os
     from jinja2 import Environment, FileSystemLoader
     from playwright.sync_api import sync_playwright
 
-    # Render HTML template with meal plan data
     template_path = os.path.join(
         os.path.dirname(os.path.abspath(__file__)),
         'templates'
@@ -472,33 +460,33 @@ def download_hasil():
     template = env.get_template('meal_plan_download.html')
 
     html_content = template.render(
-        nama          = last_result['nama'],
-        bmi           = last_result['bmi'],
-        kategori      = last_result['kategori'],
-        total_kalori  = last_result['total_kalori'],
-        rekomendasi   = last_result['rekomendasi'],
+        nama         = last_result['nama'],
+        bmi          = last_result['bmi'],
+        kategori     = last_result['kategori'],
+        total_kalori = last_result['total_kalori'],
+        rekomendasi  = last_result['rekomendasi'],
     )
 
-    # Screenshot via Playwright → PNG
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        page    = browser.new_page(viewport={'width': 1400, 'height': 900})
+        page    = browser.new_page()
         page.set_content(html_content, wait_until='networkidle')
 
-        # Full-page screenshot at 2x device scale for crisp quality
-        png_bytes = page.screenshot(
-            full_page    = True,
-            scale        = 'device',
+        pdf_bytes = page.pdf(
+            format        = 'A4',
+            print_background = True,
+            margin        = {'top': '16px', 'bottom': '16px',
+                             'left': '16px', 'right': '16px'}
         )
         browser.close()
 
-    img_io = io.BytesIO(png_bytes)
-    img_io.seek(0)
+    pdf_io = io.BytesIO(pdf_bytes)
+    pdf_io.seek(0)
     return send_file(
-        img_io,
-        mimetype      = 'image/png',
+        pdf_io,
+        mimetype      = 'application/pdf',
         as_attachment = True,
-        download_name = 'meal_plan_mingguan.png'
+        download_name = 'meal_plan_mingguan.pdf'
     )
 
 # =========================================================

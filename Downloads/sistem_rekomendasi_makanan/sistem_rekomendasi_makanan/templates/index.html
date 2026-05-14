@@ -630,18 +630,7 @@
         <!-- DOWNLOAD HASIL -->
 <div class="download-section">
 
-<button class="download-btn" onclick="downloadHasil()">Download Hasil Rekomendasi Anda</button>
-
-<script>
-async function downloadHasil() {
-    const el = document.querySelector('.result-section');
-    const canvas = await html2canvas(el, { scale: 2, useCORS: true });
-    const link = document.createElement('a');
-    link.download = 'meal_plan_mingguan.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-}
-</script>
+<a href="/download_hasil" class="download-btn">Download Hasil Rekomendasi Anda (PDF)</a>
 
 </div>
 
