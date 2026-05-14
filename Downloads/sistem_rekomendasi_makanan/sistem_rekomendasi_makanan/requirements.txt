@@ -1,3 +1,7 @@
 Flask
 gunicorn
 pillow
+gspread
+google-auth
+
+
