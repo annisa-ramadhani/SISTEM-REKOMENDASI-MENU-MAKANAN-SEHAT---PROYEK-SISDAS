@@ -294,13 +294,19 @@ def buat_meal_plan(kebutuhan_kalori):
 # SIMPAN CSV
 # =========================================================
 def connect_sheet():
+    import json
     scope = [
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive"
     ]
-    creds = Credentials.from_service_account_file(
-        'credentials.json', scopes=scope
-    )
+    creds_json = os.environ.get("GOOGLE_CREDENTIALS")
+    if creds_json:
+        creds_dict = json.loads(creds_json)
+        creds = Credentials.from_service_account_info(creds_dict, scopes=scope)
+    else:
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        creds_path = os.path.join(base_dir, 'credentials.json')
+        creds = Credentials.from_service_account_file(creds_path, scopes=scope)
     client = gspread.authorize(creds)
     return client.open_by_key('1EobTwQTF4eyx9caOHFwkWrSdORWpM5LEkbQcA1V6XH4')
 
