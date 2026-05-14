@@ -1,41 +1,78 @@
-ID,Nama Menu,Kategori Masakan,Kelompok Makanan,Kalori (kkal),Protein (g),Karbohidrat (g),Lemak (g),Tujuan Diet,Cocok Aktivitas,Sumber Kalori
-1,Ayam Geprek,Lauk Pauk,Protein,480,32,38,18,"Maintain, Bulking",Semua,FatSecret Indonesia
-2,Ayam Goreng,Lauk Pauk,Protein,420,30,12,28,"Maintain, Bulking",Semua,TKPI Kemenkes 2017
-3,Ayam Penyet,Lauk Pauk,Protein,460,31,20,25,"Maintain, Bulking",Semua,FatSecret Indonesia
-4,Ayam Pop,Lauk Pauk,Protein,320,35,5,18,"Cutting, Maintain",Semua,FatSecret Indonesia
-5,Ikan Goreng,Lauk Pauk,Protein,280,28,8,15,"Cutting, Maintain",Semua,TKPI Kemenkes 2017
-6,Ikan Cabe/Sambal Matah,Lauk Pauk,Protein,260,27,9,13,"Cutting, Maintain",Semua,FatSecret Indonesia
-7,Rendang Ayam,Lauk Pauk,Protein,490,34,10,32,"Maintain, Bulking",Semua,TKPI Kemenkes 2017
-8,Daging Sapi Masak,Lauk Pauk,Protein,350,30,5,22,"Maintain, Bulking",Semua,TKPI Kemenkes 2017
-9,Telur Dadar/Omelette,Lauk Pauk,Protein,185,12,2,14,Semua,Semua,TKPI Kemenkes 2017
-10,Bakso Sapi,Makanan Berkuah,Protein,290,18,25,12,Maintain,Semua,FatSecret Indonesia
-11,Sup Ayam,Makanan Berkuah,Protein,180,20,8,7,"Cutting, Maintain",Semua,FatSecret Indonesia
-12,Nasi Goreng,Makanan Pokok,Karbohidrat,450,12,65,14,"Maintain, Bulking",Semua,FatSecret Indonesia
-13,Nasi Padang (porsi),Makanan Pokok,Karbohidrat,600,28,70,22,Bulking,Aktif,FatSecret Indonesia
-14,Mie Goreng,Makanan Pokok,Karbohidrat,380,10,58,12,Maintain,Semua,FatSecret Indonesia
-15,Mie Ayam,Makanan Pokok,Karbohidrat,340,14,52,9,Maintain,Semua,FatSecret Indonesia
-16,Mie Instan (rebus),Makanan Pokok,Karbohidrat,330,8,50,11,Maintain,Semua,FatSecret Indonesia
-17,Bihun Goreng,Makanan Pokok,Karbohidrat,320,7,55,9,Maintain,Semua,FatSecret Indonesia
-18,Sup Sayur,Sayuran,Sayur,80,3,12,2,"Cutting, Maintain",Semua,TKPI Kemenkes 2017
-19,Pucuk Ubi Rebus,Sayuran,Sayur,55,4,8,1,Cutting,Semua,TKPI Kemenkes 2017
-20,Dimsum (3 pcs),Camilan,Camilan,180,10,20,7,Maintain,Semua,FatSecret Indonesia
-21,Risol,Camilan,Camilan,160,5,22,7,Maintain,Semua,FatSecret Indonesia
-22,Martabak Telur,Camilan,Camilan,310,12,30,16,"Maintain, Bulking",Semua,FatSecret Indonesia
-23,Sushi (6 pcs),Internasional,Karbohidrat,220,8,38,5,"Cutting, Maintain",Semua,FatSecret Indonesia
-24,Nasi Merah + Ayam Bakar,Makanan Sehat,Protein,390,30,45,8,"Cutting, Maintain",Semua,FatSecret Indonesia
-25,Salad Buah,Makanan Sehat,Buah,120,2,28,1,Cutting,Semua,TKPI Kemenkes 2017
-26,Salad Sayur + Dressing,Makanan Sehat,Sayur,150,4,15,8,Cutting,Semua,FatSecret Indonesia
-27,Oatmeal Susu,Sarapan Sehat,Karbohidrat,280,10,45,7,"Cutting, Maintain",Semua,FatSecret Indonesia
-28,Roti Gandum + Telur Rebus,Sarapan Sehat,Karbohidrat,250,14,32,8,"Cutting, Maintain",Semua,FatSecret Indonesia
-29,Tempe Bakar,Lauk Pauk,Protein,190,18,10,9,"Cutting, Maintain",Semua,TKPI Kemenkes 2017
-30,Tahu Bakar,Lauk Pauk,Protein,110,11,4,6,Cutting,Semua,TKPI Kemenkes 2017
-31,Gado-Gado,Makanan Sehat,Protein,320,14,28,18,Maintain,Semua,FatSecret Indonesia
-32,Pecel Sayur,Makanan Sehat,Sayur,270,10,30,12,"Cutting, Maintain",Semua,FatSecret Indonesia
-33,Ikan Bakar,Lauk Pauk,Protein,200,30,2,8,"Cutting, Maintain",Semua,TKPI Kemenkes 2017
-34,Capcay Sayur,Sayuran,Sayur,130,6,15,5,"Cutting, Maintain",Semua,FatSecret Indonesia
-35,Smoothie Pisang + Susu,Minuman Sehat,Buah,230,8,42,4,"Bulking, Maintain",Semua,FatSecret Indonesia
-36,Nasi + Sayur Bayam + Ikan,Makanan Sehat,Protein,350,25,40,8,"Cutting, Maintain",Semua,TKPI Kemenkes 2017
-37,Ayam Rebus Tanpa Kulit,Lauk Pauk,Protein,165,31,0,4,Cutting,Semua,TKPI Kemenkes 2017
-38,Bubur Ayam,Makanan Pokok,Karbohidrat,290,15,40,7,"Cutting, Maintain",Semua,FatSecret Indonesia
-39,Pisang (1 buah),Buah,Buah,90,1,23,0,"Cutting, Maintain",Semua,TKPI Kemenkes 2017
-40,Apel (1 buah),Buah,Buah,80,0,21,0,Cutting,Semua,TKPI Kemenkes 2017
+nama,kalori,protein,lemak,karbohidrat,kategori,deskripsi,sumber_protein,sumber_karbo,sumber_serat
+Oatmeal Pisang,320,12,7,50,Sarapan,Oatmeal sehat dengan pisang dan madu,Susu,Oatmeal,Pisang
+Overnight Oats Chia,300,11,8,45,Sarapan,Oats dengan chia seed dan susu almond,Chia Seed,Oatmeal,Buah
+Greek Yogurt Strawberry,280,15,5,30,Sarapan,Yogurt tinggi protein dengan strawberry,Yogurt,Buah,Strawberry
+Roti Gandum Alpukat,340,10,12,40,Sarapan,Roti gandum dengan alpukat segar,Telur,Roti Gandum,Alpukat
+Telur Rebus Sayur,250,18,10,15,Sarapan,Telur rebus dengan sayur sehat,Telur,-,Bayam
+Smoothie Pisang Oat,330,12,6,55,Minuman,Smoothie sehat tinggi energi,Susu,Oatmeal,Pisang
+Infused Water Lemon,20,0,0,5,Minuman,Minuman detox lemon,-,-,Lemon
+Jus Wortel Apel,120,2,1,28,Minuman,Jus segar kaya vitamin,-,Buah,Wortel
+Jus Alpukat Tanpa Gula,180,3,8,22,Minuman,Alpukat sehat rendah gula,Susu Almond,Alpukat,Alpukat
+Teh Hijau Hangat,10,0,0,2,Minuman,Teh hijau antioksidan,-,-,-
+Nasi Merah Ayam Panggang,520,35,12,55,Makan Siang,Ayam panggang dengan nasi merah,Ayam,Nasi Merah,Sayur
+Salad Ayam Sayur,430,32,10,30,Makan Siang,Salad sehat protein tinggi,Ayam,Kentang,Selada
+Gado-Gado Sehat,450,18,14,50,Makan Siang,Sayur rebus dengan saus kacang sehat,Tahu,Lontong,Sayur
+Pecel Sayur,400,15,12,48,Makan Siang,Sayuran sehat dengan sambal kacang,Tempe,Nasi Merah,Kangkung
+Sup Ayam Jagung,390,28,9,40,Makan Siang,Sup sehat kaya protein,Ayam,Jagung,Wortel
+Nasi Merah Ikan Tuna,500,38,10,52,Makan Siang,Tuna panggang dengan nasi merah,Tuna,Nasi Merah,Brokoli
+Quinoa Tempe Bowl,470,20,11,60,Makan Siang,Quinoa sehat dengan tempe,Tempe,Quinoa,Timun
+Capcay Sehat,380,16,8,45,Makan Siang,Capcay rebus rendah minyak,Ayam,Nasi Merah,Sawi
+Ayam Kukus Brokoli,420,36,10,25,Makan Siang,Ayam kukus rendah lemak,Ayam,Kentang,Brokoli
+Nasi Merah Dada Ayam,510,38,11,53,Makan Siang,Dada ayam sehat protein tinggi,Ayam,Nasi Merah,Buncis
+Salmon Panggang,540,40,15,35,Makan Malam,Salmon sehat omega 3,Salmon,Kentang,Brokoli
+Sup Sayur Tahu,320,14,8,35,Makan Malam,Sup sehat rendah lemak,Tahu,Kentang,Wortel
+Tumis Brokoli Jamur,340,15,7,40,Makan Malam,Tumis sehat minim minyak,Tahu,Nasi Merah,Brokoli
+Ikan Kembung Bakar,430,35,11,30,Makan Malam,Ikan sehat kaya omega 3,Ikan,Kentang,Tomat
+Ayam Rebus Wortel,390,30,8,38,Makan Malam,Ayam rebus sehat rendah minyak,Ayam,Nasi Merah,Wortel
+Sup Bayam Jagung,310,10,6,40,Makan Malam,Sup sehat tinggi serat,Telur,Jagung,Bayam
+Tempe Panggang Salad,350,18,10,35,Makan Malam,Tempe sehat dengan salad,Tempe,Kentang,Selada
+Nasi Merah Telur Dadar,420,20,10,52,Makan Malam,Menu sehat sederhana,Telur,Nasi Merah,Bayam
+Pepes Ikan Sehat,410,34,8,32,Makan Malam,Pepes ikan tanpa minyak,Ikan,Nasi Merah,Kemangi
+Sup Salmon Sayur,450,35,12,28,Makan Malam,Salmon sehat dengan sayuran,Salmon,Kentang,Brokoli
+Apel Merah,95,1,0,25,Buah,Buah tinggi serat,-,Buah,Apel
+Pisang Ambon,105,1,0,27,Buah,Pisang sumber energi,-,Buah,Pisang
+Jeruk Manis,80,1,0,18,Buah,Kaya vitamin C,-,Buah,Jeruk
+Pepaya Segar,70,1,0,16,Buah,Buah lancarkan pencernaan,-,Buah,Pepaya
+Semangka,60,1,0,14,Buah,Buah segar rendah kalori,-,Buah,Semangka
+Melon,65,1,0,15,Buah,Buah tinggi air,-,Buah,Melon
+Mangga,110,1,0,28,Buah,Buah kaya vitamin,-,Buah,Mangga
+Kiwi,90,2,1,20,Buah,Kaya vitamin C,-,Buah,Kiwi
+Pir,100,1,0,24,Buah,Buah tinggi serat,-,Buah,Pir
+Anggur,90,1,0,23,Buah,Antioksidan alami,-,Buah,Anggur
+Alpukat,160,2,14,9,Buah,Lemak sehat alami,-,Buah,Alpukat
+Buah Naga,85,2,0,20,Buah,Kaya serat dan vitamin,-,Buah,Buah Naga
+Stroberi,50,1,0,12,Buah,Buah rendah kalori,-,Buah,Stroberi
+Blueberry,57,1,0,14,Buah,Kaya antioksidan,-,Buah,Blueberry
+Kurma,120,1,0,32,Buah,Sumber energi sehat,-,Buah,Kurma
+Kacang Almond,180,6,15,8,Cemilan,Cemilan sehat omega 3,Almond,-,Kacang
+Edamame Rebus,150,14,5,12,Cemilan,Protein nabati tinggi,Kedelai,-,Edamame
+Yogurt Rendah Lemak,120,8,3,12,Cemilan,Yogurt sehat rendah gula,Susu,-,Buah
+Granola Sehat,200,5,8,28,Cemilan,Granola tinggi serat,Kacang,Oatmeal,Kismis
+Chia Pudding,170,6,7,20,Cemilan,Pudding sehat chia seed,Chia Seed,Oatmeal,Buah
+Kurma Almond,190,5,7,28,Cemilan,Snack sehat energi cepat,Almond,Kurma,Kurma
+Jagung Rebus,130,4,2,28,Cemilan,Jagung sehat tinggi serat,-,Jagung,Jagung
+Ubi Kukus,140,2,0,32,Cemilan,Ubi sehat rendah lemak,-,Ubi,Ubi
+Pisang Kukus,120,1,0,30,Cemilan,Pisang sehat alami,-,Pisang,Pisang
+Smoothie Berry,160,4,3,28,Cemilan,Smoothie buah sehat,Yogurt,Buah,Berry
+Roti Gandum Selai Kacang,250,9,10,30,Cemilan,Cemilan sehat protein,Kacang,Roti Gandum,Gandum
+Salad Buah Yogurt,210,6,4,36,Cemilan,Salad buah sehat,Yogurt,Buah,Apel
+Tempe Panggang,180,15,8,12,Cemilan,Tempe sehat tinggi protein,Tempe,-,Kedelai
+Tahu Kukus,120,12,5,6,Cemilan,Tahu rendah lemak,Tahu,-,Kedelai
+Oat Cookies Sehat,190,5,6,28,Cemilan,Cookies oatmeal rendah gula,Susu,Oatmeal,Oat
+Bubur Kacang Hijau,260,9,4,45,Sarapan,Kacang hijau tinggi serat,Kacang Hijau,Kacang Hijau,Kacang Hijau
+Nasi Merah Tempe,480,20,10,58,Makan Siang,Tempe sehat protein nabati,Tempe,Nasi Merah,Kangkung
+Ayam Bakar Tanpa Kulit,460,36,10,42,Makan Malam,Ayam bakar rendah lemak,Ayam,Nasi Merah,Tomat
+Sup Tahu Bayam,300,14,7,30,Makan Malam,Sup sehat kaya zat besi,Tahu,Kentang,Bayam
+Smoothie Mangga,180,4,2,35,Minuman,Smoothie buah segar,Yogurt,Buah,Mangga
+Jus Tomat,60,2,0,12,Minuman,Jus sehat antioksidan,-,Tomat,Tomat
+Air Kelapa,45,1,0,10,Minuman,Minuman elektrolit alami,-,-,-
+Susu Almond,80,3,4,8,Minuman,Susu rendah gula sehat,Almond,-,-
+Quinoa Salad,410,16,8,52,Makan Siang,Salad quinoa sehat,Ayam,Quinoa,Selada
+Salad Tuna,390,32,9,25,Makan Siang,Salad tuna rendah lemak,Tuna,Kentang,Timun
+Ikan Kukus Jahe,400,34,8,28,Makan Malam,Ikan sehat tanpa minyak,Ikan,Nasi Merah,Sawi
+Sup Jagung Ayam,360,25,7,40,Makan Malam,Sup sehat rendah lemak,Ayam,Jagung,Wortel
+Telur Dadar Sayur,280,18,10,18,Sarapan,Telur sehat dengan sayur,Telur,-,Bayam
+Roti Gandum Telur,330,18,8,38,Sarapan,Roti gandum protein tinggi,Telur,Roti Gandum,Selada
+Oatmeal Strawberry,310,11,6,48,Sarapan,Oatmeal buah segar,Susu,Oatmeal,Strawberry
+Pisang Oat Pancake,340,12,7,50,Sarapan,Pancake sehat tanpa gula,Telur,Oatmeal,Pisang
+Avocado Toast,360,10,14,38,Sarapan,Roti gandum alpukat sehat,Telur,Roti Gandum,Alpukat
