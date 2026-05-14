@@ -135,11 +135,11 @@ def ambil_data():
 
                 "kalori": int(row["kalori"]),
 
-                "protein": float(row["protein"]),
+                "protein": int(row["protein"]),
 
-                "lemak": float(row["lemak"]),
+                "lemak": int(row["lemak"]),
 
-                "karbohidrat": float(row["karbohidrat"]),
+                "karbohidrat": int(row["karbohidrat"]),
 
                 "kategori": row["kategori"],
 
@@ -402,7 +402,7 @@ def index():
             nama, gender, usia, berat, tinggi,
             aktivitas, tujuan, bmi, kategori, total_kalori
         ])
-    
+
         last_result = {
 
             "nama": nama,
@@ -453,302 +453,46 @@ def download_hasil():
 
     global last_result
 
-    width = 1600
-    height = 2400
+    import tempfile, os
+    from jinja2 import Environment, FileSystemLoader
+    from playwright.sync_api import sync_playwright
 
-    img = Image.new(
-        'RGB',
-        (width, height),
-        color=(248, 245, 235)
+    # Render HTML template with meal plan data
+    template_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        'templates'
+    )
+    env      = Environment(loader=FileSystemLoader(template_path))
+    template = env.get_template('meal_plan_download.html')
+
+    html_content = template.render(
+        nama          = last_result['nama'],
+        bmi           = last_result['bmi'],
+        kategori      = last_result['kategori'],
+        total_kalori  = last_result['total_kalori'],
+        rekomendasi   = last_result['rekomendasi'],
     )
 
-    draw = ImageDraw.Draw(img)
+    # Screenshot via Playwright → PNG
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page    = browser.new_page(viewport={'width': 1400, 'height': 900})
+        page.set_content(html_content, wait_until='networkidle')
 
-    # =====================================================
-    # FONT
-    # =====================================================
-    try:
-
-        title_font = ImageFont.truetype(
-            'arial.ttf',
-            70
+        # Full-page screenshot at 2x device scale for crisp quality
+        png_bytes = page.screenshot(
+            full_page    = True,
+            scale        = 'device',
         )
+        browser.close()
 
-        sub_font = ImageFont.truetype(
-            'arial.ttf',
-            40
-        )
-
-        text_font = ImageFont.truetype(
-            'arial.ttf',
-            32
-        )
-
-        small_font = ImageFont.truetype(
-            'arial.ttf',
-            26
-        )
-
-    except:
-
-        title_font = ImageFont.load_default()
-        sub_font = ImageFont.load_default()
-        text_font = ImageFont.load_default()
-        small_font = ImageFont.load_default()
-
-    # =====================================================
-    # HEADER
-    # =====================================================
-    draw.rounded_rectangle(
-        (20, 20, 1580, 330),
-        radius=40,
-        fill=(34, 94, 54)
-    )
-
-    # =====================================================
-    # LOGO UNRI
-    # =====================================================
-    try:
-
-        logo = Image.open('static/logo_unri.jpg')
-
-        logo = logo.resize((120, 120))
-
-        img.paste(logo, (50, 60), logo)
-
-    except:
-        pass
-
-    # =====================================================
-    # INFO USER
-    # =====================================================
-    draw.rounded_rectangle(
-        (200, 60, 760, 260),
-        radius=30,
-        fill=(245, 240, 225)
-    )
-
-    draw.text(
-        (230, 90),
-        f"Nama : {last_result['nama']}",
-        fill='black',
-        font=sub_font
-    )
-
-    draw.text(
-        (230, 145),
-        f"BMI : {last_result['bmi']} ({last_result['kategori']})",
-        fill='darkgreen',
-        font=text_font
-    )
-
-    draw.text(
-        (230, 195),
-        f"Kalori : {last_result['total_kalori']} kcal",
-        fill='darkgreen',
-        font=text_font
-    )
-
-    # =====================================================
-    # TITLE
-    # =====================================================
-    draw.text(
-        (900, 70),
-        "WEEKLY",
-        fill="white",
-        font=title_font
-    )
-
-    draw.text(
-        (860, 160),
-        "MEALS PLAN",
-        fill="white",
-        font=title_font
-    )
-
-    draw.text(
-        (830, 255),
-        "REKOMENDASI MAKANAN SEHAT",
-        fill=(255, 240, 210),
-        font=sub_font
-    )
-
-    # =====================================================
-    # POSISI CARD
-    # =====================================================
-    posisi = [
-        (50, 380),
-        (560, 380),
-        (1070, 380),
-        (50, 980),
-        (560, 980),
-        (1070, 980),
-        (50, 1580)
-    ]
-
-    warna_card = [
-        (236, 245, 220),
-        (250, 240, 225),
-        (238, 245, 220),
-        (250, 236, 220),
-        (238, 245, 220),
-        (250, 236, 220),
-        (236, 245, 220)
-    ]
-
-    # =====================================================
-    # CARD MENU
-    # =====================================================
-    for i, item in enumerate(last_result['rekomendasi']):
-
-        x, y = posisi[i]
-
-        draw.rounded_rectangle(
-            (x, y, x + 450, y + 520),
-            radius=30,
-            fill=warna_card[i]
-        )
-
-        draw.text(
-            (x + 120, y + 20),
-            item['hari'].upper(),
-            fill=(20, 80, 35),
-            font=sub_font
-        )
-
-        yy = y + 100
-
-        # SARAPAN
-        draw.text(
-            (x + 30, yy),
-            "☀ Sarapan",
-            fill='orange',
-            font=text_font
-        )
-
-        yy += 40
-
-        draw.text(
-            (x + 60, yy),
-            item['sarapan']['nama'],
-            fill='black',
-            font=small_font
-        )
-
-        # SIANG
-        yy += 70
-
-        draw.text(
-            (x + 30, yy),
-            "🍱 Makan Siang",
-            fill='darkgreen',
-            font=text_font
-        )
-
-        yy += 40
-
-        draw.text(
-            (x + 60, yy),
-            item['siang']['nama'],
-            fill='black',
-            font=small_font
-        )
-
-        # MALAM
-        yy += 70
-
-        draw.text(
-            (x + 30, yy),
-            "🌙 Makan Malam",
-            fill='gold',
-            font=text_font
-        )
-
-        yy += 40
-
-        draw.text(
-            (x + 60, yy),
-            item['malam']['nama'],
-            fill='black',
-            font=small_font
-        )
-
-        # CEMILAN
-        yy += 70
-
-        draw.text(
-            (x + 30, yy),
-            "🍎 Cemilan",
-            fill='red',
-            font=text_font
-        )
-
-        yy += 40
-
-        draw.text(
-            (x + 60, yy),
-            item['cemilan']['nama'],
-            fill='black',
-            font=small_font
-        )
-
-    # =====================================================
-    # NOTES
-    # =====================================================
-    draw.rounded_rectangle(
-        (560, 1580, 1550, 2120),
-        radius=40,
-        fill=(245, 235, 210)
-    )
-
-    draw.text(
-        (920, 1630),
-        "NOTES",
-        fill='darkgreen',
-        font=sub_font
-    )
-
-    draw.text(
-        (650, 1760),
-        '"Makanan sehat hari ini adalah investasi"',
-        fill='black',
-        font=text_font
-    )
-
-    draw.text(
-        (700, 1820),
-        '"terbaik untuk masa depan tubuhmu."',
-        fill='black',
-        font=text_font
-    )
-
-    # =====================================================
-    # FOOTER
-    # =====================================================
-    draw.rounded_rectangle(
-        (250, 2200, 1350, 2280),
-        radius=30,
-        fill=(34, 94, 54)
-    )
-
-    draw.text(
-        (420, 2225),
-        "Jaga Pola Makan, Jaga Kesehatan",
-        fill='white',
-        font=text_font
-    )
-
-    # =====================================================
-    # SAVE
-    # =====================================================imimport io
-    img_io = io.BytesIO()
-    img.save(img_io, 'PNG')
+    img_io = io.BytesIO(png_bytes)
     img_io.seek(0)
     return send_file(
         img_io,
-        mimetype='image/png',
-        as_attachment=True,
-        download_name='hasil_rekomendasi.png'
+        mimetype      = 'image/png',
+        as_attachment = True,
+        download_name = 'meal_plan_mingguan.png'
     )
 
 # =========================================================
@@ -788,5 +532,3 @@ def feedback():
 if __name__ == '__main__':
     
     app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
-
-

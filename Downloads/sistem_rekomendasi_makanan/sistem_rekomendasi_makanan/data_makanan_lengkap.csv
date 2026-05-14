@@ -1,212 +1,78 @@
-nama,kalori,protein,lemak,karbohidrat,kategori,deskripsi,sumber_protein,sumber_karbo,sumber_serat,,,,,,,,,
-Oatmeal Pisang,320,12,7,50,Sarapan,Oatmeal sehat dengan pisang dan madu,Susu,Oatmeal,Pisang,,,,,,,,,
-Overnight Oats Chia,300,11,8,45,Sarapan,Oats dengan chia seed dan susu almond,Chia Seed,Oatmeal,Buah,,,,,,,,,
-Greek Yogurt Strawberry,280,15,5,30,Sarapan,Yogurt tinggi protein dengan strawberry,Yogurt,Buah,Strawberry,,,,,,,,,
-Roti Gandum Alpukat,340,10,12,40,Sarapan,Roti gandum dengan alpukat segar,Telur,Roti Gandum,Alpukat,,,,,,,,,
-Telur Rebus Sayur,250,18,10,15,Sarapan,Telur rebus dengan sayur sehat,Telur,-,Bayam,,,,,,,,,
-Smoothie Pisang Oat,330,12,6,55,Minuman,Smoothie sehat tinggi energi,Susu,Oatmeal,Pisang,,,,,,,,,
-Infused Water Lemon,20,0,0,5,Minuman,Minuman detox lemon,-,-,Lemon,,,,,,,,,
-Jus Wortel Apel,120,2,1,28,Minuman,Jus segar kaya vitamin,-,Buah,Wortel,,,,,,,,,
-Jus Alpukat Tanpa Gula,180,3,8,22,Minuman,Alpukat sehat rendah gula,Susu Almond,Alpukat,Alpukat,,,,,,,,,
-Teh Hijau Hangat,10,0,0,2,Minuman,Teh hijau antioksidan,-,-,-,,,,,,,,,
-Nasi Merah Ayam Panggang,520,35,12,55,Makan Siang,Ayam panggang dengan nasi merah,Ayam,Nasi Merah,Sayur,,,,,,,,,
-Salad Ayam Sayur,430,32,10,30,Makan Siang,Salad sehat protein tinggi,Ayam,Kentang,Selada,,,,,,,,,
-Gado-Gado Sehat,450,18,14,50,Makan Siang,Sayur rebus dengan saus kacang sehat,Tahu,Lontong,Sayur,,,,,,,,,
-Pecel Sayur,400,15,12,48,Makan Siang,Sayuran sehat dengan sambal kacang,Tempe,Nasi Merah,Kangkung,,,,,,,,,
-Sup Ayam Jagung,390,28,9,40,Makan Siang,Sup sehat kaya protein,Ayam,Jagung,Wortel,,,,,,,,,
-Nasi Merah Ikan Tuna,500,38,10,52,Makan Siang,Tuna panggang dengan nasi merah,Tuna,Nasi Merah,Brokoli,,,,,,,,,
-Quinoa Tempe Bowl,470,20,11,60,Makan Siang,Quinoa sehat dengan tempe,Tempe,Quinoa,Timun,,,,,,,,,
-Capcay Sehat,380,16,8,45,Makan Siang,Capcay rebus rendah minyak,Ayam,Nasi Merah,Sawi,,,,,,,,,
-Ayam Kukus Brokoli,420,36,10,25,Makan Siang,Ayam kukus rendah lemak,Ayam,Kentang,Brokoli,,,,,,,,,
-Nasi Merah Dada Ayam,510,38,11,53,Makan Siang,Dada ayam sehat protein tinggi,Ayam,Nasi Merah,Buncis,,,,,,,,,
-Salmon Panggang,540,40,15,35,Makan Malam,Salmon sehat omega 3,Salmon,Kentang,Brokoli,,,,,,,,,
-Sup Sayur Tahu,320,14,8,35,Makan Malam,Sup sehat rendah lemak,Tahu,Kentang,Wortel,,,,,,,,,
-Tumis Brokoli Jamur,340,15,7,40,Makan Malam,Tumis sehat minim minyak,Tahu,Nasi Merah,Brokoli,,,,,,,,,
-Ikan Kembung Bakar,430,35,11,30,Makan Malam,Ikan sehat kaya omega 3,Ikan,Kentang,Tomat,,,,,,,,,
-Ayam Rebus Wortel,390,30,8,38,Makan Malam,Ayam rebus sehat rendah minyak,Ayam,Nasi Merah,Wortel,,,,,,,,,
-Sup Bayam Jagung,310,10,6,40,Makan Malam,Sup sehat tinggi serat,Telur,Jagung,Bayam,,,,,,,,,
-Tempe Panggang Salad,350,18,10,35,Makan Malam,Tempe sehat dengan salad,Tempe,Kentang,Selada,,,,,,,,,
-Nasi Merah Telur Dadar,420,20,10,52,Makan Malam,Menu sehat sederhana,Telur,Nasi Merah,Bayam,,,,,,,,,
-Pepes Ikan Sehat,410,34,8,32,Makan Malam,Pepes ikan tanpa minyak,Ikan,Nasi Merah,Kemangi,,,,,,,,,
-Sup Salmon Sayur,450,35,12,28,Makan Malam,Salmon sehat dengan sayuran,Salmon,Kentang,Brokoli,,,,,,,,,
-Apel Merah,95,1,0,25,Buah,Buah tinggi serat,-,Buah,Apel,,,,,,,,,
-Pisang Ambon,105,1,0,27,Buah,Pisang sumber energi,-,Buah,Pisang,,,,,,,,,
-Jeruk Manis,80,1,0,18,Buah,Kaya vitamin C,-,Buah,Jeruk,,,,,,,,,
-Pepaya Segar,70,1,0,16,Buah,Buah lancarkan pencernaan,-,Buah,Pepaya,,,,,,,,,
-Semangka,60,1,0,14,Buah,Buah segar rendah kalori,-,Buah,Semangka,,,,,,,,,
-Melon,65,1,0,15,Buah,Buah tinggi air,-,Buah,Melon,,,,,,,,,
-Mangga,110,1,0,28,Buah,Buah kaya vitamin,-,Buah,Mangga,,,,,,,,,
-Kiwi,90,2,1,20,Buah,Kaya vitamin C,-,Buah,Kiwi,,,,,,,,,
-Pir,100,1,0,24,Buah,Buah tinggi serat,-,Buah,Pir,,,,,,,,,
-Anggur,90,1,0,23,Buah,Antioksidan alami,-,Buah,Anggur,,,,,,,,,
-Alpukat,160,2,14,9,Buah,Lemak sehat alami,-,Buah,Alpukat,,,,,,,,,
-Buah Naga,85,2,0,20,Buah,Kaya serat dan vitamin,-,Buah,Buah Naga,,,,,,,,,
-Stroberi,50,1,0,12,Buah,Buah rendah kalori,-,Buah,Stroberi,,,,,,,,,
-Blueberry,57,1,0,14,Buah,Kaya antioksidan,-,Buah,Blueberry,,,,,,,,,
-Kurma,120,1,0,32,Buah,Sumber energi sehat,-,Buah,Kurma,,,,,,,,,
-Kacang Almond,180,6,15,8,Cemilan,Cemilan sehat omega 3,Almond,-,Kacang,,,,,,,,,
-Edamame Rebus,150,14,5,12,Cemilan,Protein nabati tinggi,Kedelai,-,Edamame,,,,,,,,,
-Yogurt Rendah Lemak,120,8,3,12,Cemilan,Yogurt sehat rendah gula,Susu,-,Buah,,,,,,,,,
-Granola Sehat,200,5,8,28,Cemilan,Granola tinggi serat,Kacang,Oatmeal,Kismis,,,,,,,,,
-Chia Pudding,170,6,7,20,Cemilan,Pudding sehat chia seed,Chia Seed,Oatmeal,Buah,,,,,,,,,
-Kurma Almond,190,5,7,28,Cemilan,Snack sehat energi cepat,Almond,Kurma,Kurma,,,,,,,,,
-Jagung Rebus,130,4,2,28,Cemilan,Jagung sehat tinggi serat,-,Jagung,Jagung,,,,,,,,,
-Ubi Kukus,140,2,0,32,Cemilan,Ubi sehat rendah lemak,-,Ubi,Ubi,,,,,,,,,
-Pisang Kukus,120,1,0,30,Cemilan,Pisang sehat alami,-,Pisang,Pisang,,,,,,,,,
-Smoothie Berry,160,4,3,28,Cemilan,Smoothie buah sehat,Yogurt,Buah,Berry,,,,,,,,,
-Roti Gandum Selai Kacang,250,9,10,30,Cemilan,Cemilan sehat protein,Kacang,Roti Gandum,Gandum,,,,,,,,,
-Salad Buah Yogurt,210,6,4,36,Cemilan,Salad buah sehat,Yogurt,Buah,Apel,,,,,,,,,
-Tempe Panggang,180,15,8,12,Cemilan,Tempe sehat tinggi protein,Tempe,-,Kedelai,,,,,,,,,
-Tahu Kukus,120,12,5,6,Cemilan,Tahu rendah lemak,Tahu,-,Kedelai,,,,,,,,,
-Oat Cookies Sehat,190,5,6,28,Cemilan,Cookies oatmeal rendah gula,Susu,Oatmeal,Oat,,,,,,,,,
-Bubur Kacang Hijau,260,9,4,45,Sarapan,Kacang hijau tinggi serat,Kacang Hijau,Kacang Hijau,Kacang Hijau,,,,,,,,,
-Nasi Merah Tempe,480,20,10,58,Makan Siang,Tempe sehat protein nabati,Tempe,Nasi Merah,Kangkung,,,,,,,,,
-Ayam Bakar Tanpa Kulit,460,36,10,42,Makan Malam,Ayam bakar rendah lemak,Ayam,Nasi Merah,Tomat,,,,,,,,,
-Sup Tahu Bayam,300,14,7,30,Makan Malam,Sup sehat kaya zat besi,Tahu,Kentang,Bayam,,,,,,,,,
-Smoothie Mangga,180,4,2,35,Minuman,Smoothie buah segar,Yogurt,Buah,Mangga,,,,,,,,,
-Jus Tomat,60,2,0,12,Minuman,Jus sehat antioksidan,-,Tomat,Tomat,,,,,,,,,
-Air Kelapa,45,1,0,10,Minuman,Minuman elektrolit alami,-,-,-,,,,,,,,,
-Susu Almond,80,3,4,8,Minuman,Susu rendah gula sehat,Almond,-,-,,,,,,,,,
-Quinoa Salad,410,16,8,52,Makan Siang,Salad quinoa sehat,Ayam,Quinoa,Selada,,,,,,,,,
-Salad Tuna,390,32,9,25,Makan Siang,Salad tuna rendah lemak,Tuna,Kentang,Timun,,,,,,,,,
-Ikan Kukus Jahe,400,34,8,28,Makan Malam,Ikan sehat tanpa minyak,Ikan,Nasi Merah,Sawi,,,,,,,,,
-Sup Jagung Ayam,360,25,7,40,Makan Malam,Sup sehat rendah lemak,Ayam,Jagung,Wortel,,,,,,,,,
-Telur Dadar Sayur,280,18,10,18,Sarapan,Telur sehat dengan sayur,Telur,-,Bayam,,,,,,,,,
-Roti Gandum Telur,330,18,8,38,Sarapan,Roti gandum protein tinggi,Telur,Roti Gandum,Selada,,,,,,,,,
-Oatmeal Strawberry,310,11,6,48,Sarapan,Oatmeal buah segar,Susu,Oatmeal,Strawberry,,,,,,,,,
-Pisang Oat Pancake,340,12,7,50,Sarapan,Pancake sehat tanpa gula,Telur,Oatmeal,Pisang,,,,,,,,,
-Avocado Toast,360,10,14,38,Sarapan,Roti gandum alpukat sehat,Telur,Roti Gandum,AlpukatNasi Merah,110,2.5,0.9,23,Karbohidrat Kompleks,Beras merah kaya serat dan mineral,-,Nasi Merah,Nasi Merah
-Oatmeal,150,5,2.5,27,Karbohidrat Kompleks,Gandum utuh tinggi serat larut,-,Oatmeal,Oat,,,,,,,,,
-Kentang Rebus,110,2.5,0.1,26,Karbohidrat Kompleks,Kentang rebus tanpa minyak,-,Kentang,Kentang,,,,,,,,,
-Ubi Rebus,120,2.1,0.1,28,Karbohidrat Kompleks,Ubi rebus kaya beta-karoten,-,Ubi,Ubi,,,,,,,,,
-Quinoa,120,4.4,1.9,22,Karbohidrat Kompleks,Biji-bijian tinggi protein,-,Quinoa,Quinoa,,,,,,,,,
-Bulgur,110,4,0.5,24,Karbohidrat Kompleks,Gandum pecah kaya serat,-,Bulgur,Bulgur,,,,,,,,,
-Farro,150,6,1,32,Karbohidrat Kompleks,Biji-bijian kuno bergizi,-,Farro,Farro,,,,,,,,,
-Barley,120,3.5,0.8,28,Karbohidrat Kompleks,Jelai kaya beta-glucan,-,Barley,Barley,,,,,,,,,
-Roti Gandum Utuh,80,4,1,15,Karbohidrat Kompleks,Roti gandum rendah GI,-,Roti Gandum,Gandum,,,,,,,,,
-Mie Shirataki,10,0.2,0,2,Karbohidrat Kompleks,Mie konjak rendah kalori ekstrem,-,Shirataki,Konjak,,,,,,,,,
-Nasi Putih,130,2.7,0.3,29,Karbohidrat Kompleks,Nasi putih sumber energi cepat,-,Nasi Putih,Nasi,,,,,,,,,
-Talas Rebus,100,1.5,0.2,24,Karbohidrat Kompleks,Umbi talas kaya karbohidrat,-,Talas,Talas,,,,,,,,,
-Pasta Gandum Utuh,160,6,1.4,31,Karbohidrat Kompleks,Pasta tinggi serat rendah GI,-,Pasta Gandum,Gandum,,,,,,,,,
-Roti Rye,83,2.8,1.1,16,Karbohidrat Kompleks,Roti hitam kaya serat,-,Roti Rye,Gandum Hitam,,,,,,,,,
-Sorgum,170,5.6,1.8,35,Karbohidrat Kompleks,Biji-bijian bebas gluten,-,Sorgum,Sorgum,,,,,,,,,
-Ayam Tanpa Kulit,165,31,3.6,0,Protein Hewani,Ayam rebus tanpa kulit rendah lemak,Ayam,-,-,,,,,,,,,
-Telur Rebus,70,6.3,4.8,1,Protein Hewani,Telur rebus sumber protein lengkap,Telur,-,-,,,,,,,,,
-Dada Ayam Panggang,165,31,3.6,0,Protein Hewani,Dada ayam panggang tanpa lemak,Ayam,-,-,,,,,,,,,
-Ikan Salmon,206,20,13,0,Protein Hewani,Salmon kaya omega-3,Salmon,-,-,,,,,,,,,
-Udang Rebus,100,21,1.1,0,Protein Hewani,Udang tinggi protein rendah lemak,Udang,-,-,,,,,,,,,
-Daging Sapi Tanpa Lemak,250,26,17,0,Protein Hewani,Daging sapi pilihan rendah lemak,Sapi,-,-,,,,,,,,,
-Ikan Tuna Kaleng,116,25.5,1,0,Protein Hewani,Tuna kaleng tanpa minyak,Tuna,-,-,,,,,,,,,
-Ikan Kakap Merah,110,23,1.5,0,Protein Hewani,Ikan kakap segar tinggi protein,Ikan,-,-,,,,,,,,,
-Kepiting Rebus,84,17.4,1.1,0,Protein Hewani,Kepiting rebus rendah lemak,Kepiting,-,-,,,,,,,,,
-Kerang Rebus,140,24,2,3,Protein Hewani,Kerang kaya zinc dan protein,Kerang,-,-,,,,,,,,,
-Telur Orak-arik Tanpa Minyak,80,6.7,5.5,1,Protein Hewani,Telur orak-arik tanpa tambahan minyak,Telur,-,-,,,,,,,,,
-Ikan Kembung Panggang,230,22,15,0,Protein Hewani,Ikan kembung kaya omega-3,Ikan,-,-,,,,,,,,,
-Hati Ayam,119,17,5,1,Protein Hewani,Hati ayam kaya zat besi dan vitamin,Ayam,-,-,,,,,,,,,
-Bebek Tanpa Kulit,170,19,9.5,0,Protein Hewani,Bebek tanpa kulit rendah lemak,Bebek,-,-,,,,,,,,,
-Susu Kambing Tanpa Gula,168,8.7,10.1,11,Protein Hewani,Susu kambing kaya nutrisi,Susu Kambing,-,-,,,,,,,,,
-Tahu Rebus,80,9,4.2,2,Protein Nabati,Tahu putih rebus rendah kalori,Tahu,-,Kedelai,,,,,,,,,
-Tempe Panggang,150,14,8,9,Protein Nabati,Tempe difermentasi tinggi protein nabati,Tempe,-,Kedelai,,,,,,,,,
-Edamame Rebus,120,11.9,5.2,9,Protein Nabati,Kacang kedelai muda kaya protein,Kedelai,-,Edamame,,,,,,,,,
-Kacang Merah,120,8.7,0.5,22,Protein Nabati,Kacang merah kaya protein dan serat,Kacang Merah,-,Kacang Merah,,,,,,,,,
-Lentil,120,9,0.4,20,Protein Nabati,Lentil kaya protein dan zat besi,Lentil,-,Lentil,,,,,,,,,
-Buncis Panggang,140,7.5,4.5,16,Protein Nabati,Buncis panggang kaya serat,-,-,Buncis,,,,,,,,,
-Falafel,80,3,5,8,Protein Nabati,Bola kacang arab digoreng ringan,Kacang Arab,-,Kacang Arab,,,,,,,,,
-Kacang Mete,85,2.5,6.8,5,Protein Nabati,Kacang mete kaya mineral,Mete,-,Kacang,,,,,,,,,
-Kacang Tanah Panggang,170,7,14,5,Protein Nabati,Kacang tanah panggang sumber lemak baik,Kacang Tanah,-,Kacang,,,,,,,,,
-Biji Bunga Matahari Panggang,160,6,14,5,Protein Nabati,Biji kaya vitamin E,Biji Bunga Matahari,-,Biji,,,,,,,,,
-Tofu Goreng Tanpa Minyak,150,11,8.5,4,Protein Nabati,Tahu goreng tanpa minyak,Tahu,-,Kedelai,,,,,,,,,
-Tempe Kukus,125,12,6.5,8,Protein Nabati,Tempe kukus lebih rendah lemak,Tempe,-,Kedelai,,,,,,,,,
-Natto,90,8.3,4,6,Protein Nabati,Kedelai fermentasi Jepang,Kedelai,-,Kedelai,,,,,,,,,
-Kacang Polong Rebus,81,5.4,0.4,14,Protein Nabati,Kacang polong kaya serat,Kacang Polong,-,Kacang Polong,,,,,,,,,
-Biji Wijen,90,2.7,7.9,4,Protein Nabati,Biji wijen kaya kalsium,Biji Wijen,-,Biji,,,,,,,,,
-Bayam Rebus,40,3.6,0.5,4,Sayuran,Bayam kaya zat besi dan folat,-,-,Bayam,,,,,,,,,
-Brokoli Kukus,55,3.7,0.6,8,Sayuran,Brokoli kaya vitamin C dan serat,-,-,Brokoli,,,,,,,,,
-Wortel Rebus,40,0.9,0.2,9,Sayuran,Wortel kaya beta-karoten,-,-,Wortel,,,,,,,,,
-Kembang Kol Rebus,25,2,0.3,5,Sayuran,Kembang kol rendah kalori,-,-,Kembang Kol,,,,,,,,,
-Timun,24,1.1,0.1,4,Sayuran,Timun kaya air dan rendah kalori,-,-,Timun,,,,,,,,,
-Selada Hijau,5,0.5,0.1,1,Sayuran,Selada rendah kalori tinggi air,-,-,Selada,,,,,,,,,
-Kubis Merah,25,1.3,0.2,6,Sayuran,Kubis merah kaya antioksidan,-,-,Kubis,,,,,,,,,
-Buncis Rebus,35,1.9,0.3,8,Sayuran,Buncis rebus kaya serat,-,-,Buncis,,,,,,,,,
-Okra Rebus,33,2,0.2,7,Sayuran,Okra kaya serat larut,-,-,Okra,,,,,,,,,
-Jamur Kancing,15,2.2,0.3,2,Sayuran,Jamur rendah kalori tinggi protein,-,-,Jamur,,,,,,,,,
-Tomat Cherry,30,1.5,0.2,6,Sayuran,Tomat kaya likopen,-,-,Tomat,,,,,,,,,
-Asparagus Rebus,20,2.2,0.2,4,Sayuran,Asparagus kaya folat,-,-,Asparagus,,,,,,,,,
-Labu Siam Kukus,25,0.8,0.1,6,Sayuran,Labu siam rendah kalori,-,-,Labu Siam,,,,,,,,,
-Daun Kale,35,2.9,0.5,7,Sayuran,Kale superfood kaya vitamin K,-,-,Kale,,,,,,,,,
-Daun Singkong Rebus,40,3.7,0.7,6,Sayuran,Daun singkong kaya protein nabati,-,-,Singkong,,,,,,,,,
-Apel,95,0.5,0.3,25,Buah,Apel kaya serat dan vitamin C,-,Buah,Apel,,,,,,,,,
-Pisang,105,1.3,0.4,27,Buah,Pisang sumber kalium dan energi,-,Buah,Pisang,,,,,,,,,
-Semangka,45,0.9,0.2,11,Buah,Semangka segar rendah kalori,-,Buah,Semangka,,,,,,,,,
-Alpukat,120,1.5,11,6,Buah,Alpukat kaya lemak tak jenuh,-,Buah,Alpukat,,,,,,,,,
-Jeruk,62,1.2,0.2,15,Buah,Jeruk kaya vitamin C,-,Buah,Jeruk,,,,,,,,,
-Stroberi,32,0.7,0.3,8,Buah,Stroberi rendah kalori tinggi antioksidan,-,Buah,Stroberi,,,,,,,,,
-Anggur Merah,40,0.4,0.1,10,Buah,Anggur kaya resveratrol,-,Buah,Anggur,,,,,,,,,
-Persik,60,1.4,0.4,15,Buah,Persik kaya vitamin A,-,Buah,Persik,,,,,,,,,
-Pir,57,0.4,0.1,15,Buah,Pir kaya serat,-,Buah,Pir,,,,,,,,,
-Ceri,50,0.8,0.3,13,Buah,Ceri kaya antioksidan,-,Buah,Ceri,,,,,,,,,
-Delima,80,1.7,1.2,18,Buah,Delima kaya polifenol,-,Buah,Delima,,,,,,,,,
-Pepaya,43,0.5,0.3,11,Buah,Pepaya baik untuk pencernaan,-,Buah,Pepaya,,,,,,,,,
-Melon,50,1.2,0.2,12,Buah,Melon tinggi kandungan air,-,Buah,Melon,,,,,,,,,
-Aprikot,17,0.5,0.1,4,Buah,Aprikot kaya beta-karoten,-,Buah,Aprikot,,,,,,,,,
-Raspberry,32,0.7,0.4,7,Buah,Raspberry kaya serat dan vitamin C,-,Buah,Raspberry,,,,,,,,,
-Yogurt Tanpa Gula,100,9,3.5,7,Produk Susu,Yogurt plain tanpa pemanis tambahan,Susu,-,Buah,,,,,,,,,
-Susu Skim,80,8,0.3,12,Produk Susu,Susu rendah lemak kaya protein,Susu,-,-,,,,,,,,,
-Keju Cottage Rendah Lemak,98,11,2.3,5,Produk Susu,Keju cottage rendah lemak tinggi protein,Susu,-,-,,,,,,,,,
-Keju Parmesan,22,2,1.5,0,Produk Susu,Keju keras taburan kaya kalsium,Susu,-,-,,,,,,,,,
-Susu Kedelai Tanpa Gula,80,7,3.5,4,Produk Susu,Susu kedelai plain bebas gula,Kedelai,-,-,,,,,,,,,
-Es Krim Rendah Kalori,100,3,3,16,Produk Susu,Es krim rendah lemak dan kalori,Susu,-,-,,,,,,,,,
-Buttermilk Rendah Lemak,98,8,2.2,12,Produk Susu,Susu fermentasi rendah lemak,Susu,-,-,,,,,,,,,
-Keju Cheddar Rendah Lemak,80,8.5,4.5,1,Produk Susu,Cheddar rendah lemak kaya kalsium,Susu,-,-,,,,,,,,,
-Susu Oat Tanpa Gula,120,3,5,16,Produk Susu,Susu oat bebas gula sumber serat,Oat,Oat,Oat,,,,,,,,,
-Susu Beras Tanpa Gula,120,1,2.5,23,Produk Susu,Susu beras bebas laktosa,-,Beras,-,,,,,,,,,
-Keju Ricotta Rendah Lemak,70,5.5,3.5,3,Produk Susu,Ricotta lembut rendah lemak,Susu,-,-,,,,,,,,,
-Es Krim Susu Almond Rendah Gula,110,2,5.5,13,Produk Susu,Es krim almond rendah gula,Almond,-,-,,,,,,,,,
-Puding Susu Rendah Gula,90,3.5,2.5,13,Produk Susu,Puding susu rendah pemanis,Susu,-,-,,,,,,,,,
-Whipped Cream Rendah Lemak,25,0.5,1.5,2,Produk Susu,Krim kocok rendah lemak,Susu,-,-,,,,,,,,,
-Susu Kedelai Rasa Vanila Tanpa Gula,80,7,3.5,4,Produk Susu,Susu kedelai vanila bebas gula,Kedelai,-,-,,,,,,,,,
-Kacang Almond,100,3.8,8.8,3,Cemilan,Almond panggang sumber lemak sehat,Almond,-,Kacang,,,,,,,,,
-Kacang Kenari,100,2.3,10,2,Cemilan,Kenari kaya omega-3,Kenari,-,Kacang,,,,,,,,,
-Popcorn Tanpa Mentega,90,3,1.5,18,Cemilan,Popcorn udara tanpa tambahan lemak,-,Jagung,Jagung,,,,,,,,,
-Keripik Kale Panggang,50,3.5,1,7,Cemilan,Kale dipanggang renyah rendah kalori,-,-,Kale,,,,,,,,,
-Granola Rendah Gula,120,3,4.5,20,Cemilan,Granola rendah pemanis tinggi serat,Kacang,Oatmeal,Oat,,,,,,,,,
-Kerupuk Gandum,90,2.5,2,17,Cemilan,Kerupuk gandum renyah rendah lemak,-,Gandum,Gandum,,,,,,,,,
-Keripik Pisang Panggang,105,1.2,4,18,Cemilan,Pisang dipanggang tanpa minyak,-,Pisang,Pisang,,,,,,,,,
-Puding Chia,150,5,7.5,14,Cemilan,Pudding chia seed kaya omega-3,Chia Seed,-,Chia,,,,,,,,,
-Energy Bar Rendah Gula,110,4.5,4,16,Cemilan,Batangan energi rendah gula,Kacang,Oat,Oat,,,,,,,,,
-Smoothie Alpukat dan Bayam,160,3.5,9,14,Cemilan,Smoothie hijau kaya nutrisi,Susu Almond,Alpukat,Bayam,,,,,,,,,
-Cokelat Hitam 85%,60,1,5.5,5,Cemilan,Dark cokelat tinggi kakao kaya antioksidan,-,-,-,,,,,,,,,
-Keripik Wortel Panggang,100,1.5,3.5,16,Cemilan,Wortel dipanggang rendah kalori,-,-,Wortel,,,,,,,,,
-Biskuit Gandum Utuh,90,2.5,2.5,16,Cemilan,Biskuit gandum utuh rendah lemak,-,Gandum,Gandum,,,,,,,,,
-Buah Beku,60,0.9,0.3,14,Cemilan,Stroberi dan anggur beku kaya antioksidan,-,Buah,Buah,,,,,,,,,
-Oat Cookies Homemade,100,2.5,4,16,Cemilan,Cookies oatmeal homemade tanpa gula,Telur,Oatmeal,Oat,,,,,,,,,
-Minyak Zaitun,120,0,14,0,Minyak dan Lemak Sehat,Minyak zaitun extra virgin,-,-,-,,,,,,,,,
-Minyak Kelapa,120,0,14,0,Minyak dan Lemak Sehat,Minyak kelapa kaya MCT,-,-,-,,,,,,,,,
-Selai Kacang Alami,95,3.5,8,3,Minyak dan Lemak Sehat,Selai kacang tanpa tambahan gula,Kacang Tanah,-,-,,,,,,,,,
-Biji Chia,60,2.1,3.8,5,Minyak dan Lemak Sehat,Biji chia kaya omega-3 dan serat,Chia Seed,-,Chia,,,,,,,,,
-Biji Rami,55,1.8,4.3,3,Minyak dan Lemak Sehat,Biji rami sumber asam lemak esensial,Biji Rami,-,Rami,,,,,,,,,
-Ghee,112,0,12.7,0,Minyak dan Lemak Sehat,Mentega murni kaya vitamin larut lemak,-,-,-,,,,,,,,,
-Minyak Walnut,120,0,14,0,Minyak dan Lemak Sehat,Minyak kenari kaya omega-3,-,-,-,,,,,,,,,
-Minyak Rami,120,0,14,0,Minyak dan Lemak Sehat,Minyak rami sumber ALA,-,-,-,,,,,,,,,
-Krim Kelapa Tanpa Gula,90,0.8,9.5,2,Minyak dan Lemak Sehat,Krim kelapa bebas gula,-,-,-,,,,,,,,,
-Alpukat Kering,45,0.5,4,2,Minyak dan Lemak Sehat,Alpukat kering kaya lemak baik,-,Alpukat,-,,,,,,,,,
-Minyak Biji Bunga Matahari,120,0,14,0,Minyak dan Lemak Sehat,Minyak bunga matahari kaya vitamin E,-,-,-,,,,,,,,,
-Minyak Wijen,120,0,14,0,Minyak dan Lemak Sehat,Minyak wijen kaya antioksidan,-,-,-,,,,,,,,,
-Krim Almond,95,3.5,8.5,3,Minyak dan Lemak Sehat,Selai almond kaya vitamin E,Almond,-,-,,,,,,,,,
-Minyak Kacang Tanah,120,0,14,0,Minyak dan Lemak Sehat,Minyak kacang stabil saat dipanaskan,-,-,-,,,,,,,,,
-Lemak Sapi,115,0,12.8,0,Minyak dan Lemak Sehat,Lemak sapi murni kaya CLA,-,-,-,,,,,,,,,
-Teh Hijau Tanpa Gula,2,0,0,0,Minuman,Teh hijau kaya antioksidan katekin,-,-,-,,,,,,,,,
-Air Lemon Tanpa Gula,5,0.1,0,1,Minuman,Air lemon detox kaya vitamin C,-,-,Lemon,,,,,,,,,
-Kopi Hitam Tanpa Gula,2,0.3,0,0,Minuman,Kopi hitam murni tanpa pemanis,-,-,-,,,,,,,,,
-Air Kelapa,45,1.7,0.5,9,Minuman,Air kelapa elektrolit alami,-,-,-,,,,,,,,,
-Smoothie Bayam dan Pisang,150,3.5,1.5,30,Minuman,Smoothie hijau sumber energi,Susu,Pisang,Bayam,,,,,,,,,
-Infused Water,0,0,0,0,Minuman,Air infus buah bebas kalori,-,-,-,,,,,,,,,
-Teh Rooibos Tanpa Gula,0,0,0,0,Minuman,Teh rooibos bebas kafein,-,-,-,,,,,,,,,
-Jus Wortel Segar,90,2,0.4,21,Minuman,Jus wortel kaya beta-karoten,-,Buah,Wortel,,,,,,,,,
-Kefir,120,7,5,9,Minuman,Kefir probiotik kaya kalsium,Susu,-,-,,,,,,,,,
-Cokelat Panas Rendah Gula,120,4.5,4,16,Minuman,Coklat hangat rendah pemanis,Susu,-,-,,,,,,,,,
-Jus Semangka Tanpa Gula,50,1,0.2,12,Minuman,Jus semangka segar bebas gula,-,Buah,Semangka,,,,,,,,,
-Jus Tomat Tanpa Gula,45,2,0.3,9,Minuman,Jus tomat kaya likopen,-,Tomat,Tomat,,,,,,,,,
-Teh Hitam Tanpa Gula,2,0,0,0,Minuman,Teh hitam kaya flavonoid,-,-,-,,,,,,,,,
-Air Mentimun dan Lemon,5,0.1,0,1,Minuman,Air infus mentimun lemon,-,-,Mentimun,,,,,,,,,
-Kopi Cold Brew Tanpa Gula,5,0.3,0,1,Minuman,Kopi cold brew tanpa pemanis,-,-,-,,,,,,,,,
+nama,kalori,protein,lemak,karbohidrat,kategori,deskripsi,sumber_protein,sumber_karbo,sumber_serat
+Oatmeal Pisang,320,12,7,50,Sarapan,Oatmeal sehat dengan pisang dan madu,Susu,Oatmeal,Pisang
+Overnight Oats Chia,300,11,8,45,Sarapan,Oats dengan chia seed dan susu almond,Chia Seed,Oatmeal,Buah
+Greek Yogurt Strawberry,280,15,5,30,Sarapan,Yogurt tinggi protein dengan strawberry,Yogurt,Buah,Strawberry
+Roti Gandum Alpukat,340,10,12,40,Sarapan,Roti gandum dengan alpukat segar,Telur,Roti Gandum,Alpukat
+Telur Rebus Sayur,250,18,10,15,Sarapan,Telur rebus dengan sayur sehat,Telur,-,Bayam
+Smoothie Pisang Oat,330,12,6,55,Minuman,Smoothie sehat tinggi energi,Susu,Oatmeal,Pisang
+Infused Water Lemon,20,0,0,5,Minuman,Minuman detox lemon,-,-,Lemon
+Jus Wortel Apel,120,2,1,28,Minuman,Jus segar kaya vitamin,-,Buah,Wortel
+Jus Alpukat Tanpa Gula,180,3,8,22,Minuman,Alpukat sehat rendah gula,Susu Almond,Alpukat,Alpukat
+Teh Hijau Hangat,10,0,0,2,Minuman,Teh hijau antioksidan,-,-,-
+Nasi Merah Ayam Panggang,520,35,12,55,Makan Siang,Ayam panggang dengan nasi merah,Ayam,Nasi Merah,Sayur
+Salad Ayam Sayur,430,32,10,30,Makan Siang,Salad sehat protein tinggi,Ayam,Kentang,Selada
+Gado-Gado Sehat,450,18,14,50,Makan Siang,Sayur rebus dengan saus kacang sehat,Tahu,Lontong,Sayur
+Pecel Sayur,400,15,12,48,Makan Siang,Sayuran sehat dengan sambal kacang,Tempe,Nasi Merah,Kangkung
+Sup Ayam Jagung,390,28,9,40,Makan Siang,Sup sehat kaya protein,Ayam,Jagung,Wortel
+Nasi Merah Ikan Tuna,500,38,10,52,Makan Siang,Tuna panggang dengan nasi merah,Tuna,Nasi Merah,Brokoli
+Quinoa Tempe Bowl,470,20,11,60,Makan Siang,Quinoa sehat dengan tempe,Tempe,Quinoa,Timun
+Capcay Sehat,380,16,8,45,Makan Siang,Capcay rebus rendah minyak,Ayam,Nasi Merah,Sawi
+Ayam Kukus Brokoli,420,36,10,25,Makan Siang,Ayam kukus rendah lemak,Ayam,Kentang,Brokoli
+Nasi Merah Dada Ayam,510,38,11,53,Makan Siang,Dada ayam sehat protein tinggi,Ayam,Nasi Merah,Buncis
+Salmon Panggang,540,40,15,35,Makan Malam,Salmon sehat omega 3,Salmon,Kentang,Brokoli
+Sup Sayur Tahu,320,14,8,35,Makan Malam,Sup sehat rendah lemak,Tahu,Kentang,Wortel
+Tumis Brokoli Jamur,340,15,7,40,Makan Malam,Tumis sehat minim minyak,Tahu,Nasi Merah,Brokoli
+Ikan Kembung Bakar,430,35,11,30,Makan Malam,Ikan sehat kaya omega 3,Ikan,Kentang,Tomat
+Ayam Rebus Wortel,390,30,8,38,Makan Malam,Ayam rebus sehat rendah minyak,Ayam,Nasi Merah,Wortel
+Sup Bayam Jagung,310,10,6,40,Makan Malam,Sup sehat tinggi serat,Telur,Jagung,Bayam
+Tempe Panggang Salad,350,18,10,35,Makan Malam,Tempe sehat dengan salad,Tempe,Kentang,Selada
+Nasi Merah Telur Dadar,420,20,10,52,Makan Malam,Menu sehat sederhana,Telur,Nasi Merah,Bayam
+Pepes Ikan Sehat,410,34,8,32,Makan Malam,Pepes ikan tanpa minyak,Ikan,Nasi Merah,Kemangi
+Sup Salmon Sayur,450,35,12,28,Makan Malam,Salmon sehat dengan sayuran,Salmon,Kentang,Brokoli
+Apel Merah,95,1,0,25,Buah,Buah tinggi serat,-,Buah,Apel
+Pisang Ambon,105,1,0,27,Buah,Pisang sumber energi,-,Buah,Pisang
+Jeruk Manis,80,1,0,18,Buah,Kaya vitamin C,-,Buah,Jeruk
+Pepaya Segar,70,1,0,16,Buah,Buah lancarkan pencernaan,-,Buah,Pepaya
+Semangka,60,1,0,14,Buah,Buah segar rendah kalori,-,Buah,Semangka
+Melon,65,1,0,15,Buah,Buah tinggi air,-,Buah,Melon
+Mangga,110,1,0,28,Buah,Buah kaya vitamin,-,Buah,Mangga
+Kiwi,90,2,1,20,Buah,Kaya vitamin C,-,Buah,Kiwi
+Pir,100,1,0,24,Buah,Buah tinggi serat,-,Buah,Pir
+Anggur,90,1,0,23,Buah,Antioksidan alami,-,Buah,Anggur
+Alpukat,160,2,14,9,Buah,Lemak sehat alami,-,Buah,Alpukat
+Buah Naga,85,2,0,20,Buah,Kaya serat dan vitamin,-,Buah,Buah Naga
+Stroberi,50,1,0,12,Buah,Buah rendah kalori,-,Buah,Stroberi
+Blueberry,57,1,0,14,Buah,Kaya antioksidan,-,Buah,Blueberry
+Kurma,120,1,0,32,Buah,Sumber energi sehat,-,Buah,Kurma
+Kacang Almond,180,6,15,8,Cemilan,Cemilan sehat omega 3,Almond,-,Kacang
+Edamame Rebus,150,14,5,12,Cemilan,Protein nabati tinggi,Kedelai,-,Edamame
+Yogurt Rendah Lemak,120,8,3,12,Cemilan,Yogurt sehat rendah gula,Susu,-,Buah
+Granola Sehat,200,5,8,28,Cemilan,Granola tinggi serat,Kacang,Oatmeal,Kismis
+Chia Pudding,170,6,7,20,Cemilan,Pudding sehat chia seed,Chia Seed,Oatmeal,Buah
+Kurma Almond,190,5,7,28,Cemilan,Snack sehat energi cepat,Almond,Kurma,Kurma
+Jagung Rebus,130,4,2,28,Cemilan,Jagung sehat tinggi serat,-,Jagung,Jagung
+Ubi Kukus,140,2,0,32,Cemilan,Ubi sehat rendah lemak,-,Ubi,Ubi
+Pisang Kukus,120,1,0,30,Cemilan,Pisang sehat alami,-,Pisang,Pisang
+Smoothie Berry,160,4,3,28,Cemilan,Smoothie buah sehat,Yogurt,Buah,Berry
+Roti Gandum Selai Kacang,250,9,10,30,Cemilan,Cemilan sehat protein,Kacang,Roti Gandum,Gandum
+Salad Buah Yogurt,210,6,4,36,Cemilan,Salad buah sehat,Yogurt,Buah,Apel
+Tempe Panggang,180,15,8,12,Cemilan,Tempe sehat tinggi protein,Tempe,-,Kedelai
+Tahu Kukus,120,12,5,6,Cemilan,Tahu rendah lemak,Tahu,-,Kedelai
+Oat Cookies Sehat,190,5,6,28,Cemilan,Cookies oatmeal rendah gula,Susu,Oatmeal,Oat
+Bubur Kacang Hijau,260,9,4,45,Sarapan,Kacang hijau tinggi serat,Kacang Hijau,Kacang Hijau,Kacang Hijau
+Nasi Merah Tempe,480,20,10,58,Makan Siang,Tempe sehat protein nabati,Tempe,Nasi Merah,Kangkung
+Ayam Bakar Tanpa Kulit,460,36,10,42,Makan Malam,Ayam bakar rendah lemak,Ayam,Nasi Merah,Tomat
+Sup Tahu Bayam,300,14,7,30,Makan Malam,Sup sehat kaya zat besi,Tahu,Kentang,Bayam
+Smoothie Mangga,180,4,2,35,Minuman,Smoothie buah segar,Yogurt,Buah,Mangga
+Jus Tomat,60,2,0,12,Minuman,Jus sehat antioksidan,-,Tomat,Tomat
+Air Kelapa,45,1,0,10,Minuman,Minuman elektrolit alami,-,-,-
+Susu Almond,80,3,4,8,Minuman,Susu rendah gula sehat,Almond,-,-
+Quinoa Salad,410,16,8,52,Makan Siang,Salad quinoa sehat,Ayam,Quinoa,Selada
+Salad Tuna,390,32,9,25,Makan Siang,Salad tuna rendah lemak,Tuna,Kentang,Timun
+Ikan Kukus Jahe,400,34,8,28,Makan Malam,Ikan sehat tanpa minyak,Ikan,Nasi Merah,Sawi
+Sup Jagung Ayam,360,25,7,40,Makan Malam,Sup sehat rendah lemak,Ayam,Jagung,Wortel
+Telur Dadar Sayur,280,18,10,18,Sarapan,Telur sehat dengan sayur,Telur,-,Bayam
+Roti Gandum Telur,330,18,8,38,Sarapan,Roti gandum protein tinggi,Telur,Roti Gandum,Selada
+Oatmeal Strawberry,310,11,6,48,Sarapan,Oatmeal buah segar,Susu,Oatmeal,Strawberry
+Pisang Oat Pancake,340,12,7,50,Sarapan,Pancake sehat tanpa gula,Telur,Oatmeal,Pisang
+Avocado Toast,360,10,14,38,Sarapan,Roti gandum alpukat sehat,Telur,Roti Gandum,Alpukat

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --deep:    #1a3a2a;
+  --mid:     #2d6a4f;
+  --bright:  #52b788;
+  --light:   #95d5b2;
+  --pale:    #d8f3dc;
+  --cream:   #faf7f0;
+  --cream2:  #f0ebe0;
+  --gold:    #c9a84c;
+  --gold2:   #f0d080;
+  --white:   #ffffff;
+  --text:    #1a2e22;
+  --sub:     #4a6355;
+  --muted:   #8aaa96;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  width: 1400px;
+  padding: 0;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--deep);
+  padding: 52px 64px 44px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--gold), var(--bright), var(--gold2));
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(82,183,136,0.12) 0%, transparent 70%);
+  top: -150px; right: -100px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.header-ornament {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.header-ornament span {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.6;
+}
+.header-ornament span:nth-child(2) { opacity: 1; background: var(--gold2); width:12px;height:12px; margin-top:-2px; }
+.header-ornament span:nth-child(3) { opacity: 0.6; }
+
+.header-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(82,183,136,0.15);
+  border: 1px solid rgba(82,183,136,0.3);
+  color: var(--light);
+  padding: 7px 18px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.header-tag::before { content: '✦'; color: var(--gold); }
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 58px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.header h1 em {
+  color: var(--gold2);
+  font-style: italic;
+}
+
+.header-sub {
+  margin-top: 12px;
+  color: var(--light);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+}
+
+/* ── USER BANNER ── */
+.user-banner {
+  background: var(--white);
+  margin: 32px 48px 0;
+  border-radius: 24px;
+  padding: 28px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 24px rgba(26,58,42,0.1);
+  border: 1px solid rgba(149,213,178,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, var(--bright), var(--mid));
+  border-radius: 24px 0 0 24px;
+}
+
+.user-left { padding-left: 12px; }
+
+.user-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--deep);
+}
+
+.user-bmi {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--sub);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bmi-badge {
+  display: inline-block;
+  padding: 3px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.badge-normal   { background: var(--bright); }
+.badge-kurus    { background: #29b6f6; }
+.badge-overw    { background: #ffa726; }
+.badge-obese    { background: #ef5350; }
+
+.user-right {
+  text-align: right;
+}
+
+.kal-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.kal-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--deep);
+  line-height: 1.1;
+}
+
+.kal-unit {
+  font-size: 14px;
+  color: var(--sub);
+  font-weight: 400;
+}
+
+/* ── SECTION TITLE ── */
+.section-title {
+  padding: 36px 48px 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.section-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: var(--deep);
+}
+
+.section-title span {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* ── MEAL GRID ── */
+.meal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 48px;
+}
+
+/* ── MEAL CARD ── */
+.meal-card {
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(26,58,42,0.08);
+  border: 1px solid rgba(240,235,224,0.8);
+  break-inside: avoid;
+}
+
+.card-header {
+  padding: 18px 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 24px; right: 24px;
+  height: 1px;
+  background: var(--cream2);
+}
+
+.day-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--deep);
+}
+
+.day-total {
+  background: var(--pale);
+  color: var(--mid);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* ── MEAL ROWS ── */
+.meal-rows { padding: 16px 20px 12px; }
+
+.meal-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 14px;
+  margin-bottom: 7px;
+  background: var(--cream);
+  border-left: 3px solid transparent;
+  transition: background 0.2s;
+}
+
+.meal-row.sarapan   { border-color: #f57c00; }
+.meal-row.siang     { border-color: var(--mid); }
+.meal-row.malam     { border-color: #1976d2; }
+.meal-row.buah      { border-color: var(--bright); }
+.meal-row.minuman   { border-color: #7b1fa2; }
+.meal-row.cemilan   { border-color: #c62828; }
+
+.meal-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  width: 32px;
+  text-align: center;
+}
+
+.meal-info { flex: 1; min-width: 0; }
+
+.meal-type {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+
+.meal-row.sarapan  .meal-type { color: #f57c00; }
+.meal-row.siang    .meal-type { color: var(--mid); }
+.meal-row.malam    .meal-type { color: #1976d2; }
+.meal-row.buah     .meal-type { color: var(--bright); }
+.meal-row.minuman  .meal-type { color: #7b1fa2; }
+.meal-row.cemilan  .meal-type { color: #c62828; }
+
+.meal-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meal-kal {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sub);
+  flex-shrink: 0;
+  background: var(--white);
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 1px solid var(--cream2);
+}
+
+/* ── PROGRESS ── */
+.card-progress {
+  padding: 12px 20px 18px;
+  border-top: 1px solid var(--cream2);
+}
+
+.prog-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.prog-bar {
+  width: 100%;
+  height: 7px;
+  background: var(--cream2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.prog-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--mid), var(--bright));
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--deep);
+  margin-top: 40px;
+  padding: 40px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--bright), var(--gold2));
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(82,183,136,0.08) 0%, transparent 70%);
+  bottom: -150px; left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}
+
+.footer-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--light);
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 16px;
+  opacity: 0.9;
+}
+
+.footer-tagline {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gold2);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.footer-meta {
+  margin-top: 14px;
+  font-size: 13px;
+  color: rgba(149,213,178,0.5);
+}
+
+/* ── BOTTOM ROW: Minggu + BMI Card ── */
+.meal-grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 48px;
+  margin-top: 20px;
+}
+
+/* BMI card spans 2 columns (Jumat + Sabtu width) */
+.bmi-card {
+  grid-column: span 2;
+  background: var(--white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(26,58,42,0.08);
+  border: 1px solid rgba(240,235,224,0.8);
+  padding: 28px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bmi-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--deep);
+  margin-bottom: 28px;
+}
+
+.bmi-bar-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.bmi-seg {
+  flex: 1;
+  padding: 18px 10px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  position: relative;
+}
+
+.bmi-seg small {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.bmi-seg .arrow-above {
+  position: absolute;
+  top: -26px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: var(--deep);
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(-5px); }
+}
+
+.seg-kurus    { background: linear-gradient(135deg, #4fc3f7, #0288d1); }
+.seg-normal   { background: linear-gradient(135deg, var(--bright), var(--mid)); }
+.seg-overw    { background: linear-gradient(135deg, #ffb74d, #f57c00); }
+.seg-obese    { background: linear-gradient(135deg, #ef9a9a, #c62828); }
+
+.bmi-result-text {
+  text-align: center;
+  font-size: 17px;
+  color: var(--mid);
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.bmi-result-text strong {
+  color: var(--deep);
+}
+
+/* Insight strips inside BMI card */
+.bmi-insights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.insight-chip {
+  background: var(--cream);
+  border: 1px solid var(--cream2);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.insight-chip .ic-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.insight-chip .ic-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--deep);
+}
+
+.insight-chip .ic-unit {
+  font-size: 12px;
+  color: var(--sub);
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-ornament">
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="header-tag">Weekly Meal Plan</div>
+  <h1>Rekomendasi <em>Makanan Sehat</em></h1>
+  <div class="header-sub">Program nutrisi personal berdasarkan kebutuhan kalori harian Anda</div>
+</div>
+
+<!-- USER BANNER -->
+<div class="user-banner">
+  <div class="user-left">
+    <div class="user-name">{{ nama }}</div>
+    <div class="user-bmi">
+      BMI &nbsp;<strong>{{ bmi }}</strong>
+      <span class="bmi-badge badge-{{ kategori | lower | replace(' ','') }}">{{ kategori }}</span>
+    </div>
+  </div>
+  <div class="user-right">
+    <div class="kal-label">Kebutuhan Kalori</div>
+    <div class="kal-value">{{ total_kalori }}</div>
+    <div class="kal-unit">kcal / hari</div>
+  </div>
+</div>
+
+<!-- SECTION TITLE -->
+<div class="section-title">
+  <h2>Menu 7 Hari</h2>
+  <span>Dioptimalkan untuk kebutuhan nutrisi Anda</span>
+</div>
+
+<!-- MEAL GRID (6 cards, 3 columns) -->
+<div class="meal-grid">
+{% for item in rekomendasi[:6] %}
+{% set pct = [((item.total / total_kalori) * 100) | round | int, 100] | min %}
+<div class="meal-card">
+
+  <div class="card-header">
+    <div class="day-name">{{ item.hari }}</div>
+    <div class="day-total">{{ item.total }} kal</div>
+  </div>
+
+  <div class="meal-rows">
+
+    <div class="meal-row sarapan">
+      <div class="meal-icon">☀️</div>
+      <div class="meal-info">
+        <div class="meal-type">Sarapan</div>
+        <div class="meal-name">{{ item.sarapan.nama }}</div>
+      </div>
+      <div class="meal-kal">{{ item.sarapan.kalori }}</div>
+    </div>
+
+    <div class="meal-row siang">
+      <div class="meal-icon">🍽️</div>
+      <div class="meal-info">
+        <div class="meal-type">Makan Siang</div>
+        <div class="meal-name">{{ item.siang.nama }}</div>
+      </div>
+      <div class="meal-kal">{{ item.siang.kalori }}</div>
+    </div>
+
+    <div class="meal-row malam">
+      <div class="meal-icon">🌙</div>
+      <div class="meal-info">
+        <div class="meal-type">Makan Malam</div>
+        <div class="meal-name">{{ item.malam.nama }}</div>
+      </div>
+      <div class="meal-kal">{{ item.malam.kalori }}</div>
+    </div>
+
+    <div class="meal-row buah">
+      <div class="meal-icon">🍎</div>
+      <div class="meal-info">
+        <div class="meal-type">Buah</div>
+        <div class="meal-name">{{ item.buah.nama }}</div>
+      </div>
+      <div class="meal-kal">{{ item.buah.kalori }}</div>
+    </div>
+
+    <div class="meal-row minuman">
+      <div class="meal-icon">💧</div>
+      <div class="meal-info">
+        <div class="meal-type">Minuman</div>
+        <div class="meal-name">{{ item.minuman.nama }}</div>
+      </div>
+      <div class="meal-kal">{{ item.minuman.kalori }}</div>
+    </div>
+
+    <div class="meal-row cemilan">
+      <div class="meal-icon">🍪</div>
+      <div class="meal-info">
+        <div class="meal-type">Cemilan</div>
+        <div class="meal-name">{{ item.cemilan.nama }}</div>
+      </div>
+      <div class="meal-kal">{{ item.cemilan.kalori }}</div>
+    </div>
+
+  </div>
+
+  <div class="card-progress">
+    <div class="prog-top">
+      <span>Kecocokan Kalori</span>
+      <span>{{ pct }}%</span>
+    </div>
+    <div class="prog-bar">
+      <div class="prog-fill" style="width:{{ pct }}%"></div>
+    </div>
+  </div>
+
+</div>
+{% endfor %}
+</div>
+
+<!-- BARIS BAWAH: Minggu + BMI Card -->
+{% if rekomendasi | length > 6 %}
+{% set item = rekomendasi[6] %}
+{% set pct = [((item.total / total_kalori) * 100) | round | int, 100] | min %}
+
+{# Tentukan posisi arrow BMI #}
+{% if bmi < 18.5 %}
+  {% set arrow_seg = 'kurus' %}
+{% elif bmi < 25 %}
+  {% set arrow_seg = 'normal' %}
+{% elif bmi < 30 %}
+  {% set arrow_seg = 'overw' %}
+{% else %}
+  {% set arrow_seg = 'obese' %}
+{% endif %}
+
+<div class="meal-grid-bottom">
+
+  <!-- MINGGU CARD -->
+  <div class="meal-card">
+
+    <div class="card-header">
+      <div class="day-name">{{ item.hari }}</div>
+      <div class="day-total">{{ item.total }} kal</div>
+    </div>
+
+    <div class="meal-rows">
+
+      <div class="meal-row sarapan">
+        <div class="meal-icon">☀️</div>
+        <div class="meal-info">
+          <div class="meal-type">Sarapan</div>
+          <div class="meal-name">{{ item.sarapan.nama }}</div>
+        </div>
+        <div class="meal-kal">{{ item.sarapan.kalori }}</div>
+      </div>
+
+      <div class="meal-row siang">
+        <div class="meal-icon">🍽️</div>
+        <div class="meal-info">
+          <div class="meal-type">Makan Siang</div>
+          <div class="meal-name">{{ item.siang.nama }}</div>
+        </div>
+        <div class="meal-kal">{{ item.siang.kalori }}</div>
+      </div>
+
+      <div class="meal-row malam">
+        <div class="meal-icon">🌙</div>
+        <div class="meal-info">
+          <div class="meal-type">Makan Malam</div>
+          <div class="meal-name">{{ item.malam.nama }}</div>
+        </div>
+        <div class="meal-kal">{{ item.malam.kalori }}</div>
+      </div>
+
+      <div class="meal-row buah">
+        <div class="meal-icon">🍎</div>
+        <div class="meal-info">
+          <div class="meal-type">Buah</div>
+          <div class="meal-name">{{ item.buah.nama }}</div>
+        </div>
+        <div class="meal-kal">{{ item.buah.kalori }}</div>
+      </div>
+
+      <div class="meal-row minuman">
+        <div class="meal-icon">💧</div>
+        <div class="meal-info">
+          <div class="meal-type">Minuman</div>
+          <div class="meal-name">{{ item.minuman.nama }}</div>
+        </div>
+        <div class="meal-kal">{{ item.minuman.kalori }}</div>
+      </div>
+
+      <div class="meal-row cemilan">
+        <div class="meal-icon">🍪</div>
+        <div class="meal-info">
+          <div class="meal-type">Cemilan</div>
+          <div class="meal-name">{{ item.cemilan.nama }}</div>
+        </div>
+        <div class="meal-kal">{{ item.cemilan.kalori }}</div>
+      </div>
+
+    </div>
+
+    <div class="card-progress">
+      <div class="prog-top">
+        <span>Kecocokan Kalori</span>
+        <span>{{ pct }}%</span>
+      </div>
+      <div class="prog-bar">
+        <div class="prog-fill" style="width:{{ pct }}%"></div>
+      </div>
+    </div>
+
+  </div><!-- end Minggu card -->
+
+  <!-- BMI CARD (span 2 kolom = lebar Jumat + Sabtu) -->
+  <div class="bmi-card">
+
+    <div class="bmi-card-title">Rentang BMI</div>
+
+    <!-- Arrow row -->
+    <div style="display:flex; gap:10px; margin-bottom:6px; padding: 28px 0 0;">
+      <div style="flex:1; text-align:center; font-size:22px; color:var(--deep);">
+        {% if arrow_seg == 'kurus' %}▼{% endif %}
+      </div>
+      <div style="flex:1; text-align:center; font-size:22px; color:var(--deep);">
+        {% if arrow_seg == 'normal' %}▼{% endif %}
+      </div>
+      <div style="flex:1; text-align:center; font-size:22px; color:var(--deep);">
+        {% if arrow_seg == 'overw' %}▼{% endif %}
+      </div>
+      <div style="flex:1; text-align:center; font-size:22px; color:var(--deep);">
+        {% if arrow_seg == 'obese' %}▼{% endif %}
+      </div>
+    </div>
+
+    <!-- BMI Segments -->
+    <div class="bmi-bar-row">
+      <div class="bmi-seg seg-kurus">
+        <span>Kurus</span>
+        <small>&lt; 18.5</small>
+      </div>
+      <div class="bmi-seg seg-normal">
+        <span>Normal</span>
+        <small>18.5 – 24.9</small>
+      </div>
+      <div class="bmi-seg seg-overw">
+        <span>Overweight</span>
+        <small>25 – 29.9</small>
+      </div>
+      <div class="bmi-seg seg-obese">
+        <span>Obesitas</span>
+        <small>30+</small>
+      </div>
+    </div>
+
+    <div class="bmi-result-text">
+      BMI Kamu : <strong>{{ bmi }} ({{ kategori }})</strong>
+    </div>
+
+    <!-- Insight chips -->
+    <div class="bmi-insights">
+      <div class="insight-chip">
+        <div class="ic-label">BMI</div>
+        <div class="ic-value">{{ bmi }}</div>
+        <div class="ic-unit">kg/m²</div>
+      </div>
+      <div class="insight-chip">
+        <div class="ic-label">Status</div>
+        <div class="ic-value">{{ kategori }}</div>
+        <div class="ic-unit">kategori berat badan</div>
+      </div>
+      <div class="insight-chip">
+        <div class="ic-label">Target Kalori</div>
+        <div class="ic-value">{{ total_kalori }}</div>
+        <div class="ic-unit">kcal / hari</div>
+      </div>
+    </div>
+
+  </div><!-- end BMI card -->
+
+</div>
+{% endif %}
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-quote">
+    "Makanan sehat hari ini adalah investasi terbaik untuk masa depan tubuhmu."
+  </div>
+  <div class="footer-tagline">Jaga Pola Makan · Jaga Kesehatan</div>
+  <div class="footer-meta">{{ nama }} &nbsp;·&nbsp; {{ total_kalori }} kcal/hari &nbsp;·&nbsp; BMI {{ bmi }} ({{ kategori }})</div>
+</div>
+
+</body>
+</html>
