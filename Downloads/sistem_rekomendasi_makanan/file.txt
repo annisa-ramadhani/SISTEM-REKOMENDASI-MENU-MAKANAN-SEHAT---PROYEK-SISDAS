@@ -494,7 +494,6 @@ def download_hasil():
         as_attachment = True,
         download_name = 'meal_plan_mingguan.png'
     )
-
 # =========================================================
 # FEEDBACK
 # =========================================================
