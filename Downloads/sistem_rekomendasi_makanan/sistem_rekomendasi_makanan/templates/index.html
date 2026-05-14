@@ -14,6 +14,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 
 <body>
@@ -628,15 +630,18 @@
         <!-- DOWNLOAD HASIL -->
 <div class="download-section">
 
-    <a href="/download_hasil">
+<button class="download-btn" onclick="downloadHasil()">Download Hasil Rekomendasi Anda</button>
 
-        <button class="download-btn">
-
-            📥 Download Hasil Rekomendasi Anda
-
-        </button>
-
-    </a>
+<script>
+async function downloadHasil() {
+    const el = document.querySelector('.result-section');
+    const canvas = await html2canvas(el, { scale: 2, useCORS: true });
+    const link = document.createElement('a');
+    link.download = 'meal_plan_mingguan.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+}
+</script>
 
 </div>
 
